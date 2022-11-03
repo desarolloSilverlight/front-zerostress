@@ -1,0 +1,130 @@
+.btn-primary {
+    background-color: #24214A !important;
+    border-radius: 100px;
+    width: 105px;
+    color: #fff;
+    margin-left: 15px;
+}
+
+.btn-black {
+    background-color: #F5F5F5 !important;
+    border-radius: 100px;
+    border: 1px solid gray;
+    width: 105px;
+    color: black;
+}
+
+.con{
+    display: flex;
+}
+
+.bor{
+    width: 65px;
+    height: 62px;
+    border: none;
+    border-radius: 50%;
+    margin: auto;
+    position: relative;
+    top: -18px;
+    left: 77px;
+}
+
+.borders{
+    width: 64px;
+    height: 61px;
+    border: none;
+    border-radius: 50%;
+    margin: auto;
+    position: relative;
+    top: -18px;
+    left: 80px;
+    background-color: rgba(255, 200, 44, 0);
+}
+
+.borderF{
+    width: 64px;
+    height: 61px;
+    border: none;
+    border-radius: 50%;
+    margin: auto;
+    position: relative;
+    top: -18px;
+    left: 72px;
+    background-color: rgba(255, 200, 44, 0);
+}
+
+.emoticon{
+    width: 65px;
+    height: 62px;
+}
+
+.emoticones{
+    width: 73px;
+    height: 69px;
+}
+
+.pie{
+    border-top: 1px solid #F5F5F5;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.content{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.cabeza{
+    border-bottom: 1px solid #969FAA;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h2{
+    font-weight: bold;
+    color:#24214A;
+    margin: 5px;
+    margin-left: 50px;
+}
+
+.tittle{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.x{
+    background-color: white;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+.content-emote{
+    padding: 10px; 
+    border: none; 
+    border-radius: 15px; 
+    text-align: center;
+    background-color: white;
+    color: black;
+}
+
+.content-emote-sele{
+    padding: 10px; 
+    border: none; 
+    border-radius: 15px; 
+    text-align: center;
+    background-color: #00AEEF;
+    color:white
+}

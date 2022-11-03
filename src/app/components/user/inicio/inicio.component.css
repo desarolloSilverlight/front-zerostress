@@ -1,0 +1,65 @@
+.btn-tab{
+    width: 300px;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 15px;
+    color: #fff;
+    border: 1px solid #C5CCD4;
+    background-color: #F5F5F5;
+}
+
+
+h1{
+ color: #00A6FF;
+}
+
+.negrilla{
+    font-weight: bold;
+}
+
+.logos{
+    height: 100%;
+    width: 100%;
+    color: white;
+    border-radius: 50%;
+}
+
+.content-elemts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.rounded-circle{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #84C5C5;
+    border: 1px solid #84C5C5;
+}
+
+.text-button{
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.btn-black {
+    background-color: #24214A !important;
+    border-radius: 100px;
+    width: 150px;
+    color: #fff;
+}
+
+.centrar-recuadro{
+    text-align: center;
+    margin-top: 45px;
+    border-radius: 25px;
+}
+
+.separar{
+    margin-top: 25px;
+}

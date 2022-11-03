@@ -1,0 +1,83 @@
+.content-progress{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 70px;
+    height: 100%;
+}
+
+.float-right{
+    width: 10%;
+}
+
+.centrar{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.sliderContent{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h3{
+    margin-right: 25px;
+    margin-top:15px;
+}
+
+.slider{
+    -webkit-appearance: none;
+    width: 80%;
+    height: 10px;
+    background: linear-gradient(90deg, rgb(214,214,214) 60%, rgb(214,214,214) 60%);
+    outline: none;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+    border-radius: 12px;
+    margin: auto;
+}
+
+.slider::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 30px; 
+    background-image: url('../../../../assets/image/plane.png');
+    background-size: cover;
+    border-radius: 50%;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid white;
+    background-image: url('../../../../assets/image/plane.png');
+    background-size: cover;
+    cursor: pointer;
+}
+
+.buttons{
+    height: 100%;
+    width: 50%;
+    border: 1px solid white;
+}
+
+
+footer {
+    margin-top: 15px;
+    border: 1px solid #C5CCD4;
+    width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+    -webkit-box-shadow: -6px 5px 5px -1px rgb(0 0 0 / 19%);
+    -moz-box-shadow: -6px 5px 5px -1px rgba(0,0,0,0.19);
+    box-shadow: -6px 5px 5px -1px rgb(0 0 0 / 19%);
+}

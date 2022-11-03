@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-5" id="formulario">
+  <mat-card class="mb-5 mt-5">
+    <mat-card-title>
+      <h1 class="text-center" *ngIf="contenido">{{contenido.titulo}}</h1>
+    </mat-card-title>
+  </mat-card>
+  <mat-card>
+    <div class="embed-container">
+      <!--      <iframe *ngIf="contenido" frameborder="0" allowfullscreen-->
+      <!--              [src]="getVideoIframe(contenido.link)"></iframe>-->
+      <div
+        *ngIf="contenido !== undefined && mimetype !== undefined && contenido.tpContenido === 3 ">
+        <audio autoplay controls controlsList="nodownload"
+               [src]="url"></audio>
+      </div>
+
+    </div>
+    <div class=" row mt-5 justify-content-end mr-2">
+      <button mat-raised-button class="p-2" color="primary"
+              (click)="next()">Continuar
+      </button>
+    </div>
+  </mat-card>
+</div>

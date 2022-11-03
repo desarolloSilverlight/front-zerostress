@@ -1,0 +1,106 @@
+<div *ngFor="let consulta of titulos index as i">
+  <div class="marcacion">
+    <div class="content-progress">
+      <div class="estado-actividad">
+        <h4 style="margin: 0; font-weight: bold;">
+          {{consulta.title}}
+          <br>
+          <!--            <p style="margin: 0; font-weight: lighter;">5 de 3 actividades-->
+          <!--              completadas </p>-->
+        </h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="actividades">
+    <div class="actividades-scroll actividades-scroll-{{1}}" *ngIf="i==0">
+      <button (click)="Actividad(actividad.id, actividad.conte,actividad.video,actividad.titulo)"
+              class="actividad " *ngFor="let actividad of datos"
+      >
+        <!--        <div *ngIf="consulta.flujos[i]" class="content-check">-->
+        <!--          <div class="border-cir">-->
+        <!--            <div class="cir-check">-->
+        <!--              <img class="check" src="../../../../assets/image/Raster.png">-->
+        <!--            </div>-->
+        <!--          </div>-->
+        <!--        </div>-->
+        <div style="width: 100%; display:flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+          <div style="width: 80%; display:flex; margin-top: 20px;">
+            <img src="../../../../assets/image/{{actividad.ruta}}" width="40px" height="40px">
+            <div style="color:#646464; margin-left: 10px; display:flex; justify-content: center; align-items: center;">
+              <h3 style="margin: 0px 0px 0px 0px;">{{actividad.tipo}}</h3>
+            </div>
+          </div>
+        </div>
+        <div style="width: 100%; display:flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+          <div style="width: 80%; border-bottom: 1px solid #C5CCD4; color: #646464; text-align: left;">
+            <h3 style="font-weight: bold;">{{actividad.titulo}}</h3>
+          </div>
+        </div>
+        <div
+          style="margin-top:5px; margin-bottom: 10px; width: 100%; display:flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+        </div>
+      </button>
+    </div>
+    <div class="actividades-scroll actividades-scroll-{{1}}" *ngIf="i==1">
+      <button class="actividad " (click)="Actividad(actividad.id, actividad.conte,actividad.video,actividad.titulo)"
+              *ngFor="let actividad of datos1"
+      >
+        <!--        <div *ngIf="consulta.flujos[i]" class="content-check">-->
+        <!--          <div class="border-cir">-->
+        <!--            <div class="cir-check">-->
+        <!--              <img class="check" src="../../../../assets/image/Raster.png">-->
+        <!--            </div>-->
+        <!--          </div>-->
+        <!--        </div>-->
+        <div style="width: 100%; display:flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+          <div style="width: 80%; display:flex; margin-top: 20px;">
+            <img src="../../../../assets/image/{{actividad.ruta}}" width="40px" height="40px">
+            <div style="color:#646464; margin-left: 10px; display:flex; justify-content: center; align-items: center;">
+              <h3 style="margin: 0px 0px 0px 0px;">{{actividad.tipo}}</h3>
+            </div>
+          </div>
+        </div>
+        <div style="width: 100%; display:flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+          <div style="width: 80%; border-bottom: 1px solid #C5CCD4; color: #646464; text-align: left;">
+            <h3 style="font-weight: bold;">{{actividad.titulo}}</h3>
+          </div>
+        </div>
+        <div
+          style="margin-top:5px; margin-bottom: 10px; width: 100%; display:flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+        </div>
+      </button>
+    </div>
+    <div class="actividades-scroll actividades-scroll-{{1}}" *ngIf="i==2">
+      <button class="actividad " (click)="Actividad(actividad.id, actividad.conte,actividad.video,actividad.titulo)"
+              *ngFor="let actividad of datos2"
+      >
+        <!--        <div *ngIf="consulta.flujos[i]" class="content-check">-->
+        <!--          <div class="border-cir">-->
+        <!--            <div class="cir-check">-->
+        <!--              <img class="check" src="../../../../assets/image/Raster.png">-->
+        <!--            </div>-->
+        <!--          </div>-->
+        <!--        </div>-->
+        <div style="width: 100%; display:flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+          <div style="width: 80%; display:flex; margin-top: 20px;">
+            <img src="../../../../assets/image/{{actividad.ruta}}" width="40px" height="40px">
+            <div style="color:#646464; margin-left: 10px; display:flex; justify-content: center; align-items: center;">
+              <h3  style="margin: 0px 0px 0px 0px;">{{actividad.tipo}}</h3>
+
+            </div>
+          </div>
+        </div>
+        <div style="width: 100%; display:flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+          <div style="width: 80%; border-bottom: 1px solid #C5CCD4; color: #646464; text-align: left;">
+            <h3 style="font-weight: bold;">{{actividad.titulo}}</h3>
+          </div>
+        </div>
+        <div
+          style="margin-top:5px; margin-bottom: 10px; width: 100%; display:flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+

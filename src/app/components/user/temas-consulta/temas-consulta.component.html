@@ -1,0 +1,40 @@
+<div style="width: 100%; text-align: center; margin: 15px;">
+  <div>
+    <img style="border-radius: 50%; border: 1px solid gray;" width="35px" height="35px"
+         src="../../../../assets/image/ruta.png">
+  </div>
+  <div>
+    <p><span class="negrilla"> Tu ruta: </span> {{globals.ruta}}</p>
+  </div>
+</div>
+<div class="centrar-recuadro">
+  <div class="separar">
+    <h1 class="negrilla">De las siguientes opciones ¿Cuál es la que más ha experimentado?</h1>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+      <div style="width: 75%;">
+        <div *ngFor="let tema of temasList"
+             style="width: 100%; margin-top:10px; display: flex; text-align: left; border-bottom: 1px solid #C5CCD4; padding-bottom: 8px;">
+          <input (click)="mostrarCheck(tema.id,tema)" type="radio" class="radio" [id]="tema.id">
+          <img *ngIf="active==tema.id" class="check" width="15px" height="15px"
+               src="../../../../assets/image/Raster.png">
+          <h3 class="espacio">{{tema.descripcion}}</h3>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: 40px; margin-bottom: 40px;">
+      <button (click)="runTema()" class="btn btn-black">
+        Continuar
+      </button>
+    </div>
+  </div>
+</div>
+<app-progreso-reconocimiento [progress]="3" (next)="runTema()"></app-progreso-reconocimiento>
+
+<!--
+<div class="col-md-12">
+  <h2>Cual es el tema con el te identificas</h2>
+  <mat-action-list class="mt-5">
+    <mat-list-item (click)="runTema(tema)" *ngFor="let tema of temasList; let i = index">{{i + 1}}. {{tema.descripcion}}</mat-list-item>
+  </mat-action-list>
+</div>
+-->

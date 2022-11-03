@@ -1,0 +1,57 @@
+<div class="sidenav">
+  <div class="login-main-text">
+    <img class="logo-sidenav" src="../../../../assets/image/isotipo_white-positive.png">
+    <div class="logo-text">
+      <h1 style="font-weight: bold;"> Paso a paso,</h1>
+      <h1 class="segundoH" style="font-weight: lighter;"> encuéntrate </h1>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <button class="atras" routerLink="/registro">
+    <img src="../../../../assets/image/atras.png" width="30px" height="30px" alt="">
+  </button>
+  <div class="col-md-5 col-sm-12">
+    <div class="login-cab">
+      <div style="width: 90%">
+        <img class="logo-login" src="../../../../assets/image/logo-Zero-Stress-black.png">
+      </div>
+      <h2 class="text-logo">Te damos la bienvenida hoy</h2>
+    </div>
+    <div class="login-form">
+      <form [formGroup]="form" (ngSubmit)="submit()">
+        <div class="form-group">
+          <label>Correo Electronico*</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="far fa-envelope"></i></span>
+            </div>
+            <input type="email" id="email" class="form-control" placeholder="micorreo@ejemplo.co"
+                   formControlName="email">
+          </div>
+        </div>
+        <div class="form-group" style="padding-top: 20px;">
+          <label>Contraseña*</label>
+          <a class="rpass" href="/rpassword">Recuperar contraseña</a>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-lock"></i></span>
+            </div>
+            <input [type]="show ? 'text': 'password'" id="pass" class="form-control" placeholder="*******"
+                   formControlName="password">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button">
+                <fa-icon *ngIf="!show" [icon]="['far','eye']" (click)="show= !show"></fa-icon>
+                <fa-icon *ngIf="show" [icon]="['far','eye-slash']" (click)="show= !show"></fa-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div  class="form-group">
+          <button type="submit" class="btn btn-black">Ingresar</button>
+          <!--<button type="button" class="btn btn-secondary" [routerLink]="['/registro']">Registrarse</button>-->
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

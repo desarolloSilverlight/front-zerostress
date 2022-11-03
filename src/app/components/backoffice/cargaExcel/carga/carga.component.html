@@ -1,0 +1,13 @@
+<div mat-dialog-content>
+  <input type="file" id='excel' style="margin-right: 10px;" class="form-control">
+  <select (change)="activarCarga($event)" id='sp' class="form-control">
+    <option selected disabled>Cargar</option>
+    <option value="1">Sabias que</option>
+    <option value="2">Piensa -Reflexiones</option>
+    <option value="3">Perlas de sabiduría</option>
+    <option value="4">Tips Prácticos de vida semanales</option>
+  </select>
+</div>
+<div mat-dialog-actions style="margin-top: 15px;">
+  <button mat-button class="btn btn-primary" (click)="onClickNO()">Cargar</button>
+</div>

@@ -1,0 +1,39 @@
+<div class="centrar-recuadro">
+  <div class="separar">
+    <h1 style="font-weight: bold;">Cuéntanos, ¿Cuál de estas tres opciones se asocia más a tu estrés?</h1>
+    <p style="font-size: 15px; color: #646464;">El estrés es un sentimiento de tension física o emocional. Puede
+      originarse
+      por una situación o un <br> pensamiento. </p>
+    <div style="display: flex; flex-wrap: wrap; padding-top: 25px; padding-bottom: 25px;">
+      <div style="margin:0 auto;" *ngFor="let estres of tpEstres">
+        <button (click)="cambioApariencia(estres.id)" class="btn-tab" [id]="estres.id" type="button">
+          <div *ngIf="activate==estres.id" class="content-check">
+            <div class="border-cir">
+              <div class="cir-check">
+                <img class="check" src="../../../../assets/image/Raster.png">
+              </div>
+            </div>
+          </div>
+          <div class="content-elemts" [id]="estres.numerico">
+            <div class="rounded-circle">
+              <img class="logos" [src]="img+estres.id+'.png'">
+            </div>
+            <p class="text-button">{{estres.descripcion}}</p>
+          </div>
+        </button>
+      </div>
+    </div>
+    <div style="margin-top: 40px; margin-bottom: 40px;">
+      <button class="btn btn-black" (click)="next()">
+        continuar
+      </button>
+    </div>
+  </div>
+</div>
+<app-progreso-reconocimiento [progress]="1" (next)="next()"></app-progreso-reconocimiento>
+
+
+
+
+
+

@@ -1,0 +1,121 @@
+<div mat-dialog-title class="cabeza">
+  <div class="tittle">
+    <h2>Califica el alivio de tus síntomas</h2>
+  </div>
+  <!--    <button (click)="onClickNO()" class="x">-->
+  <!--        <span class="float-right"><i class="fas fa-times" style="color: #969FAA;"></i></span>-->
+  <!--    </button>-->
+</div>
+<div mat-dialog-content>
+  <div class="se">
+    <p>Despues de realizar todas tus actividades, ¿cómo te sientes en cada zona del
+      <br> cuerpo que seleccionaste previamente?</p>
+  </div>
+
+  <div>
+    <div class="calificaciones" *ngFor="let parte of partes; index as i">
+      <div class="marca">
+        <h3 class="centrar-marca">P{{i + 1}}</h3>
+      </div>
+      <div style="display: flex; justify-content: center; align-items: center; width: auto;min-width: 90px">
+        <div style="height: 20px;">
+          <p>{{parte.descripcion.trim()}}</p>
+        </div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap;">
+        <div class="con">
+          <div class="borderT" (click)="cambioApariencia(id[1]+',p'+(i+1),i,4)" style="cursor: pointer">
+          </div>
+          <button (click)="cambioApariencia(id[1]+',p'+(i+1),i,4)" [id]="id[1]+',p'+(i+1)" class="content-emote">
+            <img src="../../../../assets/image/triste.png" class="emoticones">
+            <p style="font-size: 11px; margin-bottom: 0px;">Sin cambio</p>
+            <p style="font-size: 11px; margin-bottom: 0px;">9 - 10</p>
+          </button>
+        </div>
+        <div class="con">
+          <div class="bor" (click)="cambioApariencia(id[0]+',p'+(i+1),i,3)" style="cursor: pointer">
+          </div>
+          <button (click)="cambioApariencia(id[0]+',p'+(i+1),i,3)" [id]="id[0]+',p'+(i+1)" class="content-emote">
+            <img src="../../../../assets/image/enojado.png" class="emoticon">
+            <p style="font-size: 11px; margin-bottom: 0px;">Algo de mejoría</p>
+            <p style="font-size: 11px; margin-bottom: 0px;">6 - 8</p>
+          </button>
+        </div>
+        <div class="con">
+          <div class="borderF" (click)="cambioApariencia(id[2]+',p'+(i+1),i,2)" style="cursor: pointer">
+          </div>
+          <button (click)="cambioApariencia(id[2]+',p'+(i+1),i,2)" [id]="id[2]+',p'+(i+1)" class="content-emote">
+            <img src="../../../../assets/image/feliz.png" class="emoticones">
+            <p style="font-size: 11px; margin-bottom: 0px;">Mucho mejor</p>
+            <p style="font-size: 11px; margin-bottom: 0px;">3 - 5</p>
+          </button>
+        </div>
+        <div class="con" style="margin-right: 50px;">
+          <div class="borders" (click)="cambioApariencia(id[3]+',p'+(i+1),i,1)" style="cursor: pointer">
+          </div>
+          <button (click)="cambioApariencia(id[3]+',p'+(i+1),i,1)" [id]="id[3]+',p'+(i+1)" class="content-emote">
+            <img (click)="cambioApariencia(id[3]+',p'+(i+1),i,1)" src="../../../../assets/image/encantado.png" class="emoticones">
+            <p style="font-size: 11px; margin-bottom: 0px;">Aliviado</p>
+            <p style="font-size: 11px; margin-bottom: 0px;">0 - 2</p>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!--        <div class="calificaciones">-->
+    <!--            <div class="marca">-->
+    <!--                <h3 class="centrar-marca">P2</h3>-->
+    <!--            </div>-->
+    <!--            <div style="display: flex; justify-content: center; align-items: center; width: 90px;">-->
+    <!--                <div style="height: 20px;">-->
+    <!--                    <p>Mandibula</p>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div style="display: flex; flex-wrap: wrap;">-->
+    <!--                <div class="con">-->
+    <!--                    <div class="borderT">-->
+    <!--                    </div>-->
+    <!--                    <button (click)="cambioApariencia(id[1]+',p2')" [id]="id[1]+',p2'" class="content-emote" >-->
+    <!--                        <div style=" display:flex; justify-content: center;">-->
+    <!--                            <img src="../../../../assets/image/triste.png" class="emoticones">-->
+    <!--                        </div>-->
+    <!--                        <p style="font-size: 11px; margin-bottom: 0px;">Sin cambio</p>-->
+    <!--                    </button>-->
+    <!--                </div>-->
+    <!--                <div class="con">-->
+    <!--                    <div class="bor">-->
+    <!--                    </div>-->
+    <!--                    <button (click)="cambioApariencia(id[0]+',p2')" [id]="id[0]+',p2'" class="content-emote" >-->
+    <!--                        <div style=" display:flex; justify-content: center;">-->
+    <!--                            <img src="../../../../assets/image/enojado.png" class="emoticon">-->
+    <!--                        </div>-->
+    <!--                        <p style="font-size: 11px; margin-bottom: 0px;">Algo de mejoría</p>-->
+    <!--                    </button>-->
+    <!--                </div>-->
+    <!--                <div class="con">-->
+    <!--                    <div class="borderF">-->
+    <!--                    </div>-->
+    <!--                    <button (click)="cambioApariencia(id[2]+',p2')" [id]="id[2]+',p2'" class="content-emote">-->
+    <!--                        <div>-->
+    <!--                            <img src="../../../../assets/image/feliz.png" class="emoticones">-->
+    <!--                        </div>-->
+    <!--                        <p style="font-size: 11px; margin-bottom: 0px;">Mucho mejor</p>-->
+    <!--                    </button>-->
+    <!--                </div>-->
+    <!--                <div class="con" style="margin-right: 50px;">-->
+    <!--                    <div class="borders">-->
+    <!--                    </div>-->
+    <!--                    <button (click)="cambioApariencia(id[3]+',p2')" [id]="id[3]+',p2'" class="content-emote">-->
+    <!--                        <div>-->
+    <!--                            <img src="../../../../assets/image/encantado.png" class="emoticones">-->
+    <!--                        </div>-->
+    <!--                        <p style="font-size: 11px; margin-bottom: 0px;">Aliviado</p>-->
+    <!--                    </button>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+  </div>
+</div>
+<div mat-dialog-actions style="margin-top: 15px;" class="pie">
+  <!--    <button class="btn btn-black" (click)="onClickNO()">Cerrar</button>-->
+  <button class="btn btn-primary" (click)="next()">Enviar</button>
+</div>

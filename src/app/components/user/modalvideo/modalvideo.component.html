@@ -1,0 +1,27 @@
+<div *ngIf="load">
+  <div mat-dialog-title class="cabeza">
+    <div class="tittle">
+      <h2 *ngIf="imagen != 'video' || contenido !== undefined">{{contenido?.titulo}}({{contenido?.codigo}})</h2>
+      <h2 *ngIf="imagen == 'video' || contenido == undefined">{{data.titulo}}</h2>
+    </div>
+    <button (click)="onClickNO()" class="x">
+      <span class="float-right"><i class="fas fa-times" style="color: #969FAA;"></i></span>
+    </button>
+  </div>
+  <div mat-dialog-content style="align-items: center; text-align: center;">
+    <img *ngIf="imagen != 'video' && contenido.tpContenido !== 4 " [src]="'assets/image/'+imagen"
+         style="width: auto;object-fit: contain;">
+    <img *ngIf="contenido.tpContenido === 4" [src]="url" style="width: 100%;object-fit: contain;">
+    <video *ngIf="imagen == 'video'" [src]="'assets/video/'+video" width="550px" height="400px" controls autoplay></video>
+    <div
+      *ngIf="imagen != 'video' &&  contenido !== undefined  && (contenido.tpContenido === 3 || contenido.tpContenido === 5) ">
+      <audio style="width: 100%;" autoplay controls controlsList="nodownload"
+             [src]="url" #audioElement id="audioElement"></audio>
+    </div>
+  </div>
+  <div mat-dialog-actions style="margin-top: 15px;" class="pie">
+    <!--  <button class="btn btn-black" (click)="onClickNO()">Cerrar</button>-->
+    <button class="btn btn-primary" (click)="Calificar()">Finalizar Ejercicio</button>
+  </div>
+</div>
+

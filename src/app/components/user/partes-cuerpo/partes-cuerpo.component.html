@@ -1,0 +1,208 @@
+<div style="width: 100%; text-align: center; margin: 15px;">
+  <div>
+    <img style="border-radius: 50%; border: 1px solid gray;" width="35px" height="35px"
+         src="../../../../assets/image/ruta.png">
+  </div>
+  <div>
+    <p><span style="font-weight: bold;"> Tu ruta: </span> {{globals.ruta}}</p>
+  </div>
+</div>
+<div class="centrar-recuadro">
+  <div class="separar">
+    <h2 class="negrilla" style="color: #45669C">Selecciona los órganos o zonas específicas donde más se concentra tu
+      estrés</h2>
+    <p style="color:#646464;">Seleccionar máximo 6 opciones y dales un orden de prioridad</p>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+      <div class="content-op">
+        <div *ngIf="cabeza.length>0" class="tpcausa">
+          <div style="width: 100%; text-align: left;">
+            <h2>Zona Cabeza</h2>
+          </div>
+          <div *ngFor="let es of cabeza" class="causa">
+            <input type="checkbox" [id]="es.id" [disabled]="add" style="position: relative; top:1px;"
+                   (click)="eleccion(es.descripcion,es.id)">
+            <div class="opcion">
+              <p class="letra">{{es.descripcion}}</p>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="pecho.length>0" class="tpcausa">
+          <div style="width: 100%; text-align: left;">
+            <h2>Zona Pecho</h2>
+          </div>
+          <div *ngFor="let es of pecho" class="causa">
+            <input type="checkbox" [id]="es.id" [disabled]="add" style="position: relative; top:1px;"
+                   (click)="eleccion(es.descripcion,es.id)">
+            <div class="opcion">
+              <p class="letra">{{es.descripcion}}</p>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="brazos.length>0" class="tpcausa">
+          <div style="width: 100%; text-align: left;">
+            <h2>Zona Brazos</h2>
+          </div>
+          <div *ngFor="let es of brazos" class="causa">
+            <input type="checkbox" [id]="es.id" [disabled]="add" style="position: relative; top:1px;"
+                   (click)="eleccion(es.descripcion,es.id)">
+            <div class="opcion">
+              <p class="letra">{{es.descripcion}}</p>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="abdomen.length>0" class="tpcausa">
+          <div style="width: 100%; text-align: left; ">
+            <h2>Zona Abdominal</h2>
+          </div>
+          <div *ngFor="let es of abdomen" class="causa">
+            <input type="checkbox" [id]="es.id" [disabled]="add" style="position: relative; top:1px;"
+                   (click)="eleccion(es.descripcion,es.id)">
+            <div class="opcion">
+              <p class="letra">{{es.descripcion}}</p>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="cintura.length>0" class="tpcausa">
+          <div style="width: 100%; text-align: left;">
+            <h2>Zona Pélvica</h2>
+          </div>
+          <div *ngFor="let es of cintura" class="causa">
+            <input type="checkbox" [id]="es.id" [disabled]="add" style="position: relative; top:1px;"
+                   (click)="eleccion(es.descripcion,es.id)">
+            <div class="opcion">
+              <p class="letra">{{es.descripcion}}</p>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="piernas.length>0" class="tpcausa">
+          <div style="width: 100%; text-align: left;">
+            <h2>Zona Piernas</h2>
+          </div>
+          <div *ngFor="let es of piernas" class="causa">
+            <input type="checkbox" [id]="es.id" [disabled]="add" style="position: relative; top:5px;"
+                   (click)="eleccion(es.descripcion,es.id)">
+            <div class="opcion">
+              <p class="letra">{{es.descripcion}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="elecciones">
+        <div class="content-circulo">
+          <div class="circulo">
+            <span><i class="fas fa-check" style="color:white;"></i></span>
+          </div>
+        </div>
+        <h2 class="sub">Prioriza tu selección</h2>
+        <div class="content-marca">
+          <div class="marca">
+            <h3 class="centrar-marca">P1</h3>
+          </div>
+          <div class="lista" id="000" style="margin-bottom: 5px;">
+            <div style="width: 80%; text-align: left;">{{elecciones[0]}}</div>
+            <button *ngIf="elecciones[0]!=null" class="x" (click)="Borrar(elecciones[0],0)"><span><i
+              class="fas fa-times" style="color: gray;"></i></span></button>
+          </div>
+          <div class="content-buttons">
+            <button *ngIf="elecciones[0]!=null" class="posicion" (click)="posicionar(0,1)">
+              <i class="fas fa-chevron-down" style="color: gray;"></i>
+            </button>
+          </div>
+        </div>
+        <div class="content-marca">
+          <div class="marca">
+            <h3 class="centrar-marca">P2</h3>
+          </div>
+          <div class="lista" id="001">
+            <div style="width: 80%; text-align: left;">{{elecciones[1]}}</div>
+            <button *ngIf="elecciones[1]!=null" class="x" (click)="Borrar(elecciones[1],1)"><span><i
+              class="fas fa-times" style="color: gray;"></i></span></button>
+          </div>
+          <div class="content-buttons">
+            <button *ngIf="elecciones[1]!=null" class="posicion" (click)="posicionar(1,0)">
+              <span><i class="fas fa-chevron-up" style="color: gray;"></i></span>
+            </button>
+            <button *ngIf="elecciones[1]!=null" class="posicion" (click)="posicionar(1,2)">
+              <i class="fas fa-chevron-down" style="color: gray;"></i>
+            </button>
+          </div>
+        </div>
+        <div class="content-marca">
+          <div class="marca">
+            <h3 class="centrar-marca">P3</h3>
+          </div>
+          <div class="lista" id="002">
+            <div style="width: 80%; text-align: left;">{{elecciones[2]}}</div>
+            <button *ngIf="elecciones[2]!=null" class="x" (click)="Borrar(elecciones[2],2)"><span><i
+              class="fas fa-times" style="color: gray;"></i></span></button>
+          </div>
+          <div class="content-buttons">
+            <button *ngIf="elecciones[2]!=null" class="posicion" (click)="posicionar(2,1)">
+              <span><i class="fas fa-chevron-up" style="color: gray;"></i></span>
+            </button>
+            <button *ngIf="elecciones[2]!=null" class="posicion" (click)="posicionar(2,3)">
+              <i class="fas fa-chevron-down" style="color: gray;"></i>
+            </button>
+          </div>
+        </div>
+        <div class="content-marca">
+          <div class="marca">
+            <h3 class="centrar-marca">P4</h3>
+          </div>
+          <div class="lista" id="003">
+            <div style="width: 80%; text-align: left;">{{elecciones[3]}}</div>
+            <button *ngIf="elecciones[3]!=null" class="x" (click)="Borrar(elecciones[3],3)"><span><i
+              class="fas fa-times" style="color: gray;"></i></span></button>
+          </div>
+          <div class="content-buttons">
+            <button *ngIf="elecciones[3]!=null" class="posicion" (click)="posicionar(3,2)">
+              <span><i class="fas fa-chevron-up" style="color: gray;"></i></span>
+            </button>
+            <button *ngIf="elecciones[3]!=null" class="posicion" (click)="posicionar(3,4)">
+              <i class="fas fa-chevron-down" style="color: gray;"></i>
+            </button>
+          </div>
+        </div>
+        <div class="content-marca">
+          <div class="marca">
+            <h3 class="centrar-marca">P5</h3>
+          </div>
+          <div class="lista" id="004">
+            <div style="width: 80%; text-align: left;">{{elecciones[4]}}</div>
+            <button *ngIf="elecciones[4]!=null" class="x" (click)="Borrar(elecciones[4],4)"><span><i
+              class="fas fa-times" style="color: gray;"></i></span></button>
+          </div>
+          <div class="content-buttons">
+            <button *ngIf="elecciones[4]!=null" class="posicion" (click)="posicionar(4,3)">
+              <span><i class="fas fa-chevron-up" style="color: gray;"></i></span>
+            </button>
+            <button *ngIf="elecciones[4]!=null" class="posicion" (click)="posicionar(4,5)">
+              <i class="fas fa-chevron-down" style="color: gray;"></i>
+            </button>
+          </div>
+        </div>
+        <div class="content-marca">
+          <div class="marca">
+            <h3 class="centrar-marca">P6</h3>
+          </div>
+          <div class="lista" id="005" style="margin-bottom: 5px;">
+            <div style="width: 80%; text-align: left;">{{elecciones[5]}}</div>
+            <button *ngIf="elecciones[5]!=null" class="x" (click)="Borrar(elecciones[5],5)"><span><i
+              class="fas fa-times" style="color: gray;"></i></span></button>
+          </div>
+          <div class="content-buttons">
+            <button *ngIf="elecciones[5]!=null" class="posicion" (click)="posicionar(5,4)">
+              <span><i class="fas fa-chevron-up" style="color: gray;"></i></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: 40px; margin-bottom: 40px;">
+      <button class="btn btn-black" (click)="next()">
+        continuar
+      </button>
+    </div>
+  </div>
+</div>
+<app-progreso-reconocimiento [progress]="7" (next)="next()"></app-progreso-reconocimiento>

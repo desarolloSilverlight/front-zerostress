@@ -1,0 +1,150 @@
+.content-progress {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+  }
+  
+  .float-right {
+    width: 10%;
+  }
+  
+  .centrar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 51.5%;
+  }
+  .estado-actividad {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+  }
+
+  .estado-actividad h4{
+    font-size: 18px;
+  }
+  
+  .centrar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 51.5%;
+  }
+  
+  h3 {
+    margin-right: 25px;
+    margin-top: 15px;
+  }
+  
+  .buttons {
+    height: 100%;
+    width: 50%;
+    border: 1px solid white;
+  }
+  
+  .marcacion {
+    background-color: #1bc88c;
+    margin-top: 15px;
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .actividades {
+  
+    width: 100%;
+    margin-top: 30px;
+  }
+  
+  .actividades-scroll {
+    width: auto;
+    height: 200px;
+    overflow-y: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  .actividad {
+    display: inline-block;
+    /*float: left;*/
+    /*display: flex;*/
+    flex-wrap: wrap;
+    border-radius: 15px;
+    border: 1px solid #C5CCD4;
+    width: 30%;
+    background-color: white;
+    margin-left: 12px;
+    margin-bottom: 12px;
+    -webkit-box-shadow: -6px 5px 5px -1px rgba(0,0,0,0.19);
+-moz-box-shadow: -6px 5px 5px -1px rgba(0,0,0,0.19);
+box-shadow: -6px 5px 5px -1px rgba(0,0,0,0.19);
+  }
+  
+  .actividad-realizada {
+    background-color: #E8F7FF;
+    border: 1px solid #45669C;
+  }
+  
+  .audio-realizado {
+    background-color: #E8F7FF;
+    color: #45669C;
+  }
+    
+  .con {
+    display: flex;
+    margin-left: 10px;
+  }
+  
+  
+  
+  .cir {
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .content-check {
+    width: 45px;
+    height: 45px;
+    position: relative;
+    top: -29px;
+    right: -163px;
+  }
+  
+  .border-cir {
+    border-radius: 200px;
+    border: 1px solid #84C5C5;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .cir-check {
+    background-color: #84C5C5;
+    border-radius: 200px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .check {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .con {
+    display: flex;
+    margin-left: 10px;
+  }

@@ -1,0 +1,81 @@
+<div style="border-bottom: 1px solid #C5CCD4;" class="navbar navbar-light bg-light">
+  <a class="navbar-brand">Navbar</a>
+
+  <form class="form-inline" [formGroup]="form">
+    <p style="margin-top: 10px;">{{user}}</p>
+    <div class="dropdown">
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon"
+              [matMenuTriggerFor]="menu">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+    </div>
+    <mat-menu #menu="matMenu">
+      <button [routerLink]="['/app','cambio']" mat-menu-item>Actualizar datos</button>
+      <button (click)="openModal()" mat-menu-item>Cambiar contraseña</button>
+      <button [routerLink]="['/login']" mat-menu-item>Cerrar sesión</button>
+    </mat-menu>
+  </form>
+</div>
+<div style="height: 83%; width: 100%;">
+  <div class="mat-side-menu" style="display: flex; flex-wrap: wrap;">
+    <div style="background-color: #45669C; height: 60px; width: 60px;">
+      <div style="background-color: #24214A; height: 60px; display:
+                  flex; justify-content: center; align-items: center;">
+        <img src="https://zerostress.com.co/wp-content/uploads/2022/06/favicon_zerostress.png" class="isotipo-white">
+      </div>
+    </div>
+    <div style="height: 60px; width: 80%; display: flex;">
+      <div style="width: 200px; height: 60px; border-bottom: 2px solid #C5CCD4 ; color: black; display: flex;
+                  justify-content: center;  align-items: center; flex-wrap: wrap;">
+        <div style="margin-top: 15px; width: 40px; height: 40px; border-radius: 100%;">
+          <img id="porfile" width="100%" height="100%" style="border-radius: 50%;" [src]="foto">
+        </div>
+        <div style="width: 100%; text-align: center; ">
+          <h3>¡Hola! <br> <span class="negrilla">{{user}}</span></h3>
+        </div>
+      </div>
+      <div style=" height: 70%; width: 100%;">
+        <mat-action-list style="padding-right: 15px;">
+          <mat-list-item id="0" class="but" routerLink="/app/inicio" routerLinkActive="nav-active"><span><i
+            class="fas fa-home"
+          ></i></span>
+            <span style="margin-left: 5px;">Inicio</span></mat-list-item>
+<!--          <mat-list-item class="but" routerLink="/app/reconocimiento" routerLinkActive="nav-active"><span><i-->
+<!--            class="far fa-eye" id="00"-->
+<!--          ></i></span>-->
+<!--            <span style="margin-left: 5px;">Reconocimiento</span></mat-list-item>-->
+          <mat-list-item class="but" routerLink="/app/misActividades" routerLinkActive="nav-active"><span><i
+            class="far fa-check-circle"></i></span>
+            <span style="margin-left: 5px;">Mis Actividades</span></mat-list-item>
+          <mat-list-item class="but" routerLink="/app/miHistoria" routerLinkActive="nav-active"><span><i
+            class="far fa-check-circle"></i></span>
+            <span style="margin-left: 5px;">Mi Historia</span></mat-list-item>
+<!--          <mat-list-item class="but" routerLink="/app/misConsultas"><span><i class="far fa-comment-dots"></i></span>-->
+<!--            <span style="margin-left: 5px;">Mis Consultas</span></mat-list-item>-->
+<!--          <mat-list-item> URGENCIAS</mat-list-item>-->
+        </mat-action-list>
+      </div>
+    </div>
+  </div>
+  <div class="content" id="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<!--
+<mat-toolbar  color="primary">
+  <button (click)="open()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Wellness Mind</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon"
+          [matMenuTriggerFor]="menuNav">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+  <mat-menu #menuNav="matMenu">
+    <button [routerLink]="['/app','cambio']" mat-menu-item>Cambiar datos</button>
+    <button [routerLink]="['/login']" mat-menu-item>Cerrar sesión</button>
+  </mat-menu>
+</mat-toolbar>
+-->

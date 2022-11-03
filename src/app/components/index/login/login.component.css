@@ -1,0 +1,448 @@
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.main-head {
+  height: 150px;
+  background: #FFF;
+}
+
+.atras{
+  width: 10%;
+  border: none;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin-left: 100px;
+  margin-top: 25px;
+}
+
+label{
+  color: #646464;
+}
+
+.btn-black {
+  background-color: #45669C !important;
+  border-radius: 100px;
+  width: 100%;
+  color: #fff;
+  border: 1px solid black;
+}
+
+.sidenav {
+  height: 100%;
+  background: url("../../../../assets/image/fondo-registro-login-v4.jpg");
+  background-size: cover;
+  overflow-x: hidden;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.logo-sidenav{
+  width: 145px;
+  height: 133px;
+}
+
+.main {
+  padding: 0px 10px;
+  display: flex;
+}
+
+.col-sm-12{
+  margin-left: 50px;
+}
+
+.rpass{
+  margin-left: 40px; 
+  font-size: 12px;
+}
+
+.text-logo{
+  color: #646464; 
+  margin-top: 15px;
+  font-weight:lighter;
+}
+
+.logo-login{
+  width: 110px;
+  height: 70px;
+}
+
+.logo-text{
+  padding-top: 12px;
+}
+
+.login-main-text h1 {
+  color: #fff;
+  font-size: 30px;
+  padding-top: 12px;
+  line-height: 10px;
+}
+
+.login-main-text {
+  padding: 25px;
+  color: #fff;
+}
+
+.segundoH{
+  margin-top: 1px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .login-form {
+    margin-top: 3%;
+  }
+
+  .col-sm-12{
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .login-cab{
+    margin-top: 2%;
+  }
+
+  .register-form {
+    margin-top: 10%;
+  }
+
+  .atras{
+    width: 10%;
+    border: none;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-left: 20px;
+    margin-top: 25px;
+  }
+
+}
+
+@media screen and (min-width: 768px) {
+  .main {
+    margin-right: 30%;
+  }
+
+  .sidenav {
+    width: 50%;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: 0;
+  }
+
+  .login-form {
+    margin-top: 8%;
+    font-size: 10px;
+  }
+
+  .login-cab{
+    margin-top:8%;
+  }
+
+  .register-form {
+    margin-top: 20%;
+  }
+
+  .atras{
+    width: 10%;
+    border: none;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-left: 5px;
+    margin-top: 25px;
+  }
+
+  .col-sm-12{
+    margin-left: 10px;
+    margin-right: 0px;
+  }
+
+  .rpass{
+    margin-left: 10px; 
+    font-size: 10px;
+  }
+
+}
+
+@media screen and (max-width: 1920px){
+  .main {
+    margin-right: 50%;
+  }
+
+  .text-logo{
+    font-size: 29px;
+    color: #646464; 
+    margin-top: 15px;
+    font-weight:lighter;
+  }
+
+  .logo-sidenav{
+    width: 247px;
+    height: 223px;
+    margin-bottom: 30px;
+  }
+
+  .col-sm-12{
+    margin-left: 50px;
+  }
+
+  .login-form {
+    margin-top: 12%;
+    font-size: 20px;
+  }
+
+  .atras{
+    width: 10%;
+    border: none;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-left: 80px;
+    margin-top: 35px;
+  }
+
+  .rpass{
+    margin-left: 60px; 
+    font-size: 18px;
+  }
+
+  .logo-login{
+    width: 190px;
+    height: 120px;
+  }
+
+  .login-main-text h1 {
+    color: #fff;
+    font-size: 60px;
+    padding-top: 0px;
+  }
+
+  .segundoH{
+    margin-top: 60px;
+  }
+
+  .login-main-text {
+    padding-top: 20px;
+    color: #fff;
+  }
+}
+
+@media screen and (max-width: 1768px){
+  .rpass{
+    margin-left: 55px; 
+    font-size: 16px;
+  }
+
+  .login-form {
+    margin-top: 12%;
+    font-size: 19px;
+  }
+
+  .text-logo{
+    font-size: 26px;
+    color: #646464; 
+    margin-top: 15px;
+    font-weight:lighter;
+  }
+
+  .login-main-text h1 {
+    color: #fff;
+    font-size: 47px;
+    padding-top: 22px;
+  }
+
+  .segundoH{
+    margin-top: 1px;
+  }
+
+  .logo-sidenav{
+    margin-bottom: 0px;
+  }
+}
+
+@media screen and (max-width: 1440px){
+  
+  .rpass{ 
+    margin-left: 35px; 
+    font-size: 12px;
+  }
+
+  .login-form {
+    margin-top: 8%;
+    font-size: 15px;
+  }
+
+  .text-logo{
+    font-size: 20px;
+    color: #646464; 
+    margin-top: 15px;
+    font-weight:lighter;
+  }
+
+  .logo-login{
+    width: 140px;
+    height: 80px;
+  }
+
+  .login-main-text h1 {
+    color: #fff;
+    font-size: 35px;
+    padding-top: 15px;
+  }
+
+  .segundoH{
+    margin-top: 1px;
+  }
+
+  .logo-sidenav{
+    width: 160px;
+    height: 143px;
+    margin-bottom: 0px;
+  }
+
+}
+
+@media screen and (max-width: 1326px){
+  
+  .rpass{
+    margin-left: 35px; 
+    font-size: 11px;
+  }
+
+  .login-form {
+    margin-top: 12%;
+    font-size: 15px;
+  }
+
+  .login-main-text h1 {
+    color: #fff;
+    font-size: 40px;
+    padding-top: 18px;
+  }
+
+  .text-logo{
+    color: #646464; 
+    margin-top: 15px;
+    font-weight:lighter;
+    font-size: 19px;
+  }
+
+  .logo-login{
+    width: 140px;
+    height: 80px;
+  }
+
+  .logo-sidenav{
+    width: 160px;
+    height: 143px;
+    margin-bottom: 0px;
+  }
+  
+}
+
+@media screen and (max-width: 1060px){
+
+  .rpass{
+    margin-left: 25px; 
+    font-size: 9px;
+  }
+
+  .login-form {
+    margin-top: 7%;
+    font-size: 11px;
+  }
+
+  .login-main-text {
+    padding: 8px;
+    color: #fff;
+  }
+
+  .login-main-text h1 {
+    color: #fff;
+    font-size: 27px;
+    padding-top: 8px;
+  }
+
+  .text-logo{
+    color: #646464; 
+    margin-top: 15px;
+    font-weight:lighter;
+    font-size: 15px;
+  }
+
+  .logo-login{
+    width: 110px;
+    height: 70px;
+  }
+
+  .logo-sidenav{
+    width: 130px;
+    height: 113px;
+    margin-bottom: 0px;
+  }
+}
+
+@media screen and (max-width: 884px){
+
+  .rpass{
+    margin-left: 17px; 
+    font-size: 7px;
+  }
+
+  .login-form {
+    margin-top: 7%;
+    font-size: 9px;
+  }
+
+  .login-main-text {
+    padding: 9px;
+    color: #fff;
+  }
+
+  .login-main-text h1 {
+    color: #fff;
+    font-size: 22px;
+    padding-top: 3px;
+  }
+
+  .text-logo{
+    color: #646464; 
+    margin-top: 15px;
+    font-weight:lighter;
+    font-size: 12px;
+  }
+  
+  .logo-login{
+    width: 90px;
+    height: 60px;
+  }
+  
+  .logo-sidenav{
+    width: 90px;
+    height: 83px;
+    margin-bottom: 0px;
+  }
+
+}
+
+.login-cab{
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;1,700&display=swap');

@@ -1,0 +1,35 @@
+<div mat-dialog-title class="cabeza">
+    <div class="tittle">
+        <h2>Cambiar Contraseña</h2>
+    </div>
+    <button (click)="onClickNO()" class="x">
+        <span class="float-right"><i class="fas fa-times" style="color: #969FAA;"></i></span>
+    </button>
+</div>
+<div mat-dialog-content>
+    <form [formGroup]="form">
+        <div class="form row">
+            <div class="col-md-6 mb-2">
+                <mat-form-field class="text-input" appearance="outline">
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput type="password" formControlName="contrasena">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6 mb-2">
+                <mat-form-field class="text-input" appearance="outline">
+                    <mat-label>Repetir contraseña</mat-label>
+                    <input matInput type="password" (keyup)="Contrasenas($event)">
+                </mat-form-field>
+                <div class="error">
+                    <div *ngIf="equals">
+                        <p>Contraseña Invalida</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div mat-dialog-actions style="margin-top: 15px;" class="pie">  
+    <button class="btn btn-black" (click)="onClickNO()">Cerrar</button>
+    <button class="btn btn-primary" (click)="Enviar()">Aceptar</button>
+</div>

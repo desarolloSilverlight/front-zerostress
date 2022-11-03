@@ -1,0 +1,137 @@
+<div id="list" class="container-fluid-fluid ">
+  <div class="row mt-4 d-flex justify-content-center">
+    <div class="col-md-12 title">
+      <div class="text">
+        <p>Contenidos</p>
+      </div>
+    </div>
+    <div class="col-md-12 p-0 mt-2 buttons-container">
+      <div class="d-flex" style="width: 100%;">
+        <a [routerLink]="['/backoffice','contenidos','edit','a',parent]" mat-raised-button color="primary" class="pt-1"
+          style="max-height: 40px;">
+          <mat-icon fontSet="fas" fontIcon="fa-plus" class="mt-2"></mat-icon>
+          <span>Agregar</span>
+        </a>
+
+        <div class="ml-auto">
+          <mat-form-field>
+            <mat-label> Columna</mat-label>
+            <mat-select [(ngModel)]="singularValue" (selectionChange)="changeFilter($event)">
+              <mat-option value="id">
+                Id
+              </mat-option>
+              <mat-option value="tpContenido">
+                TpContenido
+              </mat-option>
+              <mat-option value="link">
+                Link
+              </mat-option>
+              <mat-option value="titulo">
+                Titulo
+              </mat-option>
+              <mat-option value="retornaA">
+                RetornaA
+              </mat-option>
+              <mat-option value="idRetornaA">
+                IdRetornaA
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="ml-auto">
+            <mat-label>Buscar por columna</mat-label>
+            <input matInput (keyup)="singularFilter($event)" placeholder="Ex. ium">
+          </mat-form-field>
+        </div>
+
+        <mat-form-field class="ml-auto">
+          <mat-label>Buscar</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium">
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-12 p-0 m-0 d-flex">
+        <mat-button-toggle-group class="tab-group ml-auto">
+          <mat-button-toggle  [routerLink]="['/backoffice','temasConsulta','edit','e',parent]">Temas de consulta
+          </mat-button-toggle>
+          <mat-button-toggle class="tab-active" [routerLink]="['./']">
+            Contenidos
+          </mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
+
+      <div class="table-container">
+        <table class="table table-striped table-hover" mat-table [dataSource]="dataSource" matSort
+          matSortDirection="desc">
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="id">
+              Id
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+          </ng-container>
+          <ng-container matColumnDef="tpContenido">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="tpContenido">
+              TpContenido
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.tpContenido}} </td>
+          </ng-container>
+          <ng-container matColumnDef="idTemaConsulta">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="idTemaConsulta">
+              idTemaConsulta
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.idTemaConsulta}} </td>
+          </ng-container>
+          <ng-container matColumnDef="link">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="link">
+              Link
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.link}} </td>
+          </ng-container>
+          <ng-container matColumnDef="titulo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="titulo">
+              Titulo
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.titulo}} </td>
+          </ng-container>
+          <ng-container matColumnDef="orden">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="orden">
+              orden
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.orden}} </td>
+          </ng-container>
+          <ng-container matColumnDef="codigo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="codigo">
+              codigo
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.codigo}} </td>
+          </ng-container>
+          <ng-container matColumnDef=" ">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header=" "></th>
+            <td mat-cell *matCellDef="let element">
+              <div class="d-flex w-100">
+                <div class="ml-auto">
+                  <a [routerLink]="['/backoffice','contenidos','edit','v',element.id]" class="button-v"
+                    mat-raised-button color="primary">
+                    <mat-icon fontSet="far" fontIcon="fa-eye" class="mt-1"></mat-icon>
+                  </a>
+                  <a [routerLink]="['/backoffice','contenidos','edit','e',element.id]" class="button-e"
+                    mat-raised-button color="accent">
+                    <mat-icon fontSet="fas" fontIcon="fa-edit" class="mt-1"></mat-icon>
+                  </a>
+                  <a [routerLink]="['/backoffice','contenidos','edit','d',element.id]" class="button-d"
+                    mat-raised-button color="warn">
+                    <mat-icon fontSet="fas" fontIcon="fa-trash" class="mt-1"></mat-icon>
+                  </a>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;" appRow></tr>
+        </table>
+      </div>
+
+      <mat-paginator [pageSizeOptions]="[10, 20, 50]" showFirstLastButtons></mat-paginator>
+    </div>
+  </div>
+</div>

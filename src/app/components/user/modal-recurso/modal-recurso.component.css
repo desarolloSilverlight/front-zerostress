@@ -1,0 +1,30 @@
+.pie{
+  border-top: 1px solid #F5F5F5;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.cabeza{
+  border-bottom: 1px solid #969FAA;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tittle{
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.x{
+  background-color: white;
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}

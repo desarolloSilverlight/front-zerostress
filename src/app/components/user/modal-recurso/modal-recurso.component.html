@@ -1,0 +1,23 @@
+<div mat-dialog-title class="cabeza">
+  <div class="tittle">
+    <!--    <h2 *ngIf="imagen != 'video' || contenido !== undefined">{{contenido?.titulo}}</h2>-->
+    <h2>{{data.titulo}}</h2>
+  </div>
+  <button (click)="onClickNO()" class="x">
+    <span class="float-right"><i class="fas fa-times" style="color: #969FAA;"></i></span>
+  </button>
+</div>
+<div style="align-items: center; text-align: center;">
+  <!--    <iframe width="560" height="315" src="https://www.youtube.com/embed/r0mQj2Y_sqI" title="YouTube video player" -->
+  <!--    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"-->
+  <!--     allowfullscreen>-->
+  <!--    </iframe>-->
+  <img *ngIf="imagen != 'video'" [src]="'assets/image/'+imagen" style="width: 100%;object-fit: contain;">
+  <video *ngIf="imagen == 'video'" [src]="'assets/video/'+video" autoplay controls controlsList="nodownload"
+         style="width: 70%;object-fit: contain;"></video>
+  <div
+    *ngIf="imagen != 'video' &&  contenido !== undefined && contenido.tpContenido === 3 ">
+    <audio autoplay controls controlsList="nodownload"
+           [src]="url" #audioElement id="audioElement"></audio>
+  </div>
+</div>

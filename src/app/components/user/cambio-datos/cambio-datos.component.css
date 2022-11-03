@@ -1,0 +1,36 @@
+.CargaIm{
+    right: 0;
+    width: 50%;
+}
+
+.inputs{
+    left: 0;
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+}
+.perfil{
+    width: 330;
+    height: 300px;
+}
+@media screen and (min-width: 994px) {
+    .perfil{
+        width: 260px;
+        height: 230px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .perfil{
+        width: 200px;
+        height: 170px;
+    }
+}
+
+@media screen and (max-height: 450px) {
+    .perfil{
+        width: 150px;
+        height: 120px;
+    }
+}

@@ -1,0 +1,140 @@
+<div id="add" class="container-fluid p-2 TmSalarios-edit">
+  <div class="row mt-4 d-flex justify-content-center">
+
+
+    <div class="col-md-12 title">
+      <div *ngIf="add" class="text">
+        <p>Agregar Notificaciones</p>
+      </div>
+      <div *ngIf="view" class="text">
+        <p>Ver Notificaciones</p>
+      </div>
+      <div *ngIf="edit" class="text">
+        <p>Editar Notificaciones</p>
+      </div>
+      <div *ngIf="delete" class="text">
+        <p>Eliminar Notificaciones</p>
+      </div>
+    </div>
+    <div class="col-md-12 mt-2 form-container">
+      <form class="form row" [formGroup]="form">
+        <div class="col-md-6">
+          <mat-form-field class="text-input" appearance="outline">
+            <mat-label>idTpNotificacion</mat-label>
+            <mat-select formControlName="idTpNotificacion">
+              <mat-option *ngFor="let grup of dataSourcetp" [value]="grup.id">
+                {{grup.descripcion}}
+              </mat-option>
+            </mat-select>
+
+          </mat-form-field>
+          <div class="error">
+            <div *ngIf="fc.idTpNotificacion.errors?.required && submitted">
+              <p>Este Campo es Obligatorio</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="text-input" appearance="outline">
+            <mat-label>Correos</mat-label>
+            <input type="email" matInput formControlName="correos" >
+
+          </mat-form-field>
+          <div class="error">
+            <div *ngIf="fc.correos.errors?.required && submitted">
+              <p>Este Campo es Obligatorio</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <mat-checkbox formControlName="envioInmediato" class="example-margin">Envio inmediato
+          </mat-checkbox>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="text-input" appearance="outline">
+            <mat-label>FechaEnvio</mat-label>
+            <input type="date" matInput formControlName="fechaEnvio" >
+
+          </mat-form-field>
+          <div class="error">
+            <div *ngIf="fc.fechaEnvio.errors?.required && submitted">
+              <p>Este Campo es Obligatorio</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="text-input" appearance="outline">
+            <mat-label>HoraEnvio</mat-label>
+            <input type="time" matInput formControlName="horaEnvio" >
+
+          </mat-form-field>
+          <div class="error">
+            <div *ngIf="fc.horaEnvio.errors?.required && submitted">
+              <p>Este Campo es Obligatorio</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="text-input" appearance="outline">
+            <mat-label>Usuario</mat-label>
+            <mat-select formControlName="usuario">
+              <mat-option *ngFor="let grup of dataSourceU" [value]="grup.id">
+                {{grup.email}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          
+          <div class="error">
+            <div *ngIf="fc.usuario.errors?.required && submitted">
+              <p>Este Campo es Obligatorio</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="center-block">
+            <mat-checkbox formControlName="enviado" class="example-margin">Enviado
+            </mat-checkbox>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="text-input" appearance="outline">
+            <mat-label>Variables</mat-label>
+            <input matInput formControlName="variables" >
+
+          </mat-form-field>
+          <div class="error">
+            <div *ngIf="fc.variables.errors?.required && submitted">
+              <p>Este Campo es Obligatorio</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 button-container" *ngIf="edit || add || view || delete">
+          <div class="d-flex w-100">
+            <button mat-raised-button class="button-v" color="secondary">
+              <mat-icon fontSet="fas" fontIcon="fa-long-arrow-alt-left" class="mt-2"
+                        [routerLink]="['/backoffice','notificaciones']"></mat-icon>
+              <span>Regresar</span>
+            </button>
+            <button class="ml-auto" mat-raised-button color="primary" (click)="save()" *ngIf="add">
+              <mat-icon fontSet="far" fontIcon="fa-save" class="mt-2"></mat-icon>
+              <span>Insertar</span>
+            </button>
+
+            <button class="ml-auto" mat-raised-button color="accent" (click)="save()" *ngIf="edit">
+              <mat-icon fontSet="far" fontIcon="fa-edit" class="mt-2"></mat-icon>
+              <span>Editar</span>
+            </button>
+
+            <button class="ml-auto" mat-raised-button color="warn" (click)="save()" *ngIf="delete">
+              <mat-icon fontSet="far" fontIcon="fa-trash-alt" class="mt-2"></mat-icon>
+              <span>Eliminar</span>
+            </button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,21 @@
+<footer class="page-footer font-small blue pt-4">
+  <div class="content-progress">
+    <div class="centrar">
+      <div class="sliderContent">
+        <input class="slider inputRange" id="inputRange" type="range" [max]="max" min="0" [value]="progress" disabled>
+        <div>
+          <h3><span class="value" id="value"></span></h3>
+        </div>
+      </div>
+    </div>
+    <div class="float-right">
+      <button class="buttons ca" (click)="volver();" id="ca">
+        <span> <i class="fas fa-chevron-left"></i></span>
+      </button>
+      <button class="buttons cc" id="cc" (click)="siguiente()">
+        <span><i class="fas fa-chevron-right"></i></span>
+      </button>
+    </div>
+  </div>
+</footer>
+

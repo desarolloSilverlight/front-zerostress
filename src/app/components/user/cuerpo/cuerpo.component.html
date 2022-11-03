@@ -1,0 +1,99 @@
+<div style="width: 100%; text-align: center; margin: 15px;">
+  <div>
+    <img style="border-radius: 50%; border: 1px solid gray;" width="35px" height="35px"
+         src="../../../../assets/image/ruta.png">
+  </div>
+  <div>
+    <p><span class="negrilla"> Tu ruta: </span> {{globals.ruta}} </p>
+  </div>
+</div>
+<div class="centrar-recuadro">
+  <div class="separar">
+    <h2 class="negrilla">Señala en qué partes del cuerpo se manifiesta más tu estrés</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+      <div id="contenedor">
+        <img src="../../../../assets/image/human-body.png" alt="iamgen" class="efecto">
+
+        <img id="rollover_0" name="cabeza" src="../../../../assets/image/partesCuerpo/pngshape.php"
+             class="efecto oculto" alt="Zona Cabeza" style="visibility: hidden;">
+        <img id="rollover_1" name="pecho" src="../../../../assets/image/partesCuerpo/pngshape(1).php"
+             class="efecto oculto" alt="Zona Pecho" style="visibility: hidden;">
+        <img id="rollover_2" name="abdomen" src="../../../../assets/image/partesCuerpo/pngshape(2).php"
+             class="efecto oculto" alt="Zona Abdomen" style="visibility: hidden;">
+        <img id="rollover_3" name="cintura" src="../../../../assets/image/partesCuerpo/pngshape(5).php"
+             class="efecto oculto" alt="Zona Pélvica" style="visibility: hidden;">
+        <img id="rollover_4" name="Piernas" src="../../../../assets/image/partesCuerpo/pngshape(6).php"
+             class="efecto oculto" alt="Zona Piernas" style="visibility: hidden;">
+        <img id="rollover_5" name="Piernas" src="../../../../assets/image/partesCuerpo/pngshape(7).php"
+             class="efecto oculto" alt="Zona Piernas" style="visibility: hidden;">
+        <img id="rollover_6" name="Brazos" src="../../../../assets/image/partesCuerpo/pngshape(3).php"
+             class="efecto oculto" alt="Zona Brazos" style="visibility: hidden;">
+        <img id="rollover_7" name="Brazos" src="../../../../assets/image/partesCuerpo/pngshape(4).php"
+             class="efecto oculto" alt="Zona Brazos" style="visibility: hidden;">
+
+
+        <img src="../../../../assets/image/partesCuerpo/transpa.php" alt="transparente" usemap="#mapa" class="efecto">
+      </div>
+      <map id="mapa" name="mapa">
+        <area shape="poly"
+              coords="179,12,180,13,182,13,183,14,185,14,186,15,187,15,189,17,190,17,196,23,196,24,197,25,197,26,198,27,198,28,199,29,199,32,200,33,200,44,199,45,199,49,198,50,198,52,197,53,197,55,196,56,196,57,195,58,195,59,193,61,193,62,187,68,186,68,185,69,184,69,183,70,182,70,181,71,168,71,167,70,166,70,165,69,163,69,156,62,156,61,155,60,155,59,154,58,154,57,153,56,153,55,152,54,152,52,151,51,151,49,150,48,150,44,149,43,149,33,150,32,150,29,151,28,151,27,152,26,152,25,153,24,153,23,160,16,161,16,162,15,163,15,164,14,166,14,167,13,169,13,170,12"
+              href="javascript: void(0)" title="Zona de la cabeza" (click)="mostrar('rollover_0',partes[0])">
+        <area shape="poly"
+              coords="183,74,184,73,184,77,186,79,186,80,187,81,188,81,190,83,197,83,198,84,201,84,202,85,204,85,205,86,206,86,205,87,205,128,206,129,143,129,144,128,144,87,143,86,144,86,145,85,147,85,148,84,151,84,152,83,159,83,164,78,164,77,165,76,165,73,166,74,168,74,169,75,180,75,181,74"
+              href="javascript: void(0)" title="Zona del pecho" (click)="mostrar('rollover_1',partes[1])">
+        <area shape="poly"
+              coords="206,133,206,139,207,140,207,151,208,152,208,163,209,164,209,191,140,191,140,163,141,162,141,151,142,150,142,140,143,139,143,133"
+              href="javascript: void(0)" title="Zona del abdomen" (click)="mostrar('rollover_2',partes[3])">
+        <area shape="poly"
+              coords="209,195,209,207,208,208,208,219,207,220,207,229,177,229,177,224,176,223,176,218,175,217,174,217,173,218,173,221,172,222,172,229,142,229,142,222,141,221,141,209,140,208,140,195"
+              href="javascript: void(0)" title="Zona de la cintura" (click)="mostrar('rollover_3',partes[4])">
+        <area shape="poly"
+              coords="207,232,207,235,206,236,206,246,205,247,205,262,204,263,204,274,203,275,203,290,202,291,202,300,201,301,201,317,200,318,200,323,201,324,205,324,206,325,208,325,210,327,211,327,214,330,214,331,215,332,215,333,216,334,216,337,187,337,187,330,186,329,186,322,185,321,185,308,184,307,184,299,183,298,183,286,182,285,182,277,181,276,181,265,180,264,180,254,179,253,179,245,178,244,178,232"
+              href="javascript: void(0)" title="Zona de las piernas" (click)="mostrar('rollover_4',partes[5])">
+        <area shape="poly"
+              coords="171,232,171,243,170,244,170,252,169,253,169,263,168,264,168,275,167,276,167,284,166,285,166,297,165,298,165,306,164,307,164,320,163,321,163,329,162,330,162,337,133,337,133,334,134,333,134,332,135,331,135,330,139,326,140,326,141,325,143,325,144,324,148,324,149,323,149,320,148,319,148,302,147,301,147,292,146,291,146,276,145,275,145,265,144,264,144,249,143,248,143,237,142,236,142,232"
+              href="javascript: void(0)" title="Zona de las piernas" (click)="mostrar('rollover_5',partes[5])">
+        <area shape="poly"
+              coords="230,132,231,133,231,134,232,135,232,137,233,138,233,139,234,140,234,142,235,143,235,144,236,145,236,147,237,148,237,150,238,151,238,152,239,153,239,155,240,156,240,157,241,158,241,160,242,161,242,163,243,164,243,165,244,166,244,168,245,169,245,176,244,177,244,178,242,180,241,180,240,181,238,181,237,182,235,182,234,181,232,181,231,180,230,180,228,178,228,177,227,176,227,175,226,174,226,172,225,171,225,170,224,169,224,167,223,166,223,165,222,164,222,162,221,161,221,160,220,159,220,157,219,156,219,155,218,154,218,152,217,151,217,150,216,149,216,147,215,146,215,145,214,144,214,142,213,141,213,140,212,139,212,137,211,136,211,135,210,134,210,132,209,131,209,88,216,95,216,96,217,97,217,98,218,99,218,101,219,102,219,103,220,104,220,106,221,107,221,108,222,109,222,111,223,112,223,114,224,115,224,116,225,117,225,119,226,120,226,121,227,122,227,124,228,125,228,126,229,127,229,129,230,130"
+              href="javascript: void(0)" title="Zona de los brazos" (click)="mostrar('rollover_6',partes[2])">
+        <area shape="poly"
+              coords="125,116,125,115,126,114,126,112,127,111,127,109,128,108,128,107,129,106,129,104,130,103,130,102,131,101,131,99,132,98,132,97,133,96,133,95,136,92,136,91,137,91,140,88,140,131,139,132,139,133,138,134,138,136,137,137,137,138,136,139,136,141,135,142,135,143,134,144,134,146,133,147,133,148,132,149,132,151,131,152,131,153,130,154,130,156,129,157,129,159,128,160,128,161,127,162,127,164,126,165,126,166,125,167,125,169,124,170,124,171,123,172,123,174,122,175,122,176,121,177,121,178,119,180,118,180,117,181,115,181,114,182,112,182,111,181,109,181,108,180,107,180,105,178,105,177,104,176,104,169,105,168,105,166,106,165,106,163,107,162,107,161,108,160,108,158,109,157,109,156,110,155,110,153,111,152,111,150,112,149,112,148,113,147,113,145,114,144,114,143,115,142,115,140,116,139,116,138,117,137,117,135,118,134,118,132,119,131,119,130,120,129,120,127,121,126,121,125,122,124,122,122,123,121,123,120,124,119,124,117"
+              href="javascript: void(0)" title="Zona de los brazos" (click)="mostrar('rollover_7',partes[2])">
+      </map>
+
+      <div class="rango-dolor" id="rango">
+        <div>
+          <h2 *ngIf="select==false" style="color:#45669C" class="negrilla">Puedes Seleccionar <br> varias partes del
+            cuerpo</h2>
+          <div *ngIf="select" style="display: flex; flex-wrap: wrap;">
+            <div class="content-circulo">
+              <div class="circulo">
+                <span><i class="fas fa-check fa-2x" style="color:white;"></i></span>
+              </div>
+            </div>
+            <div style="width: 100%; position: relative; top: -20px;">
+              <h2 style="color:#45669C; margin: 0px 0px 0px 0px;"> Selecciona la intensidad </h2>
+              <p style="color:#646464">Rango de 0 a 10, donde 10 es muy intenso</p>
+            </div>
+            <div style="width: 100%; display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
+                        position: relative; top: -13px;">
+              <div class="sliders" [id]="a" *ngFor="let a of marcado">
+                <h4 class="negrilla" style="color:#646464; margin:0px 0px 5px 0px">{{a}}</h4>
+                <div class="slideValue"><span [id]="'valueS'+a">0</span></div>
+                <input (change)="pintar(a)" class="slider" [id]="'sli'+a" type="range" max="10" min="0" value="0">
+                <button class="x" (click)="Borrar(a)"><span><i class="fas fa-times" style="color: gray;"></i></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: 40px; margin-bottom: 40px;">
+      <button class="btn btn-black" (click)="next()">
+        continuar
+      </button>
+    </div>
+  </div>
+</div>
+<app-progreso-reconocimiento [progress]="5" (next)="next()"></app-progreso-reconocimiento>

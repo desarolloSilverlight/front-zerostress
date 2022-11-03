@@ -1,0 +1,142 @@
+<div id="add" class="container-fluid p-2 TmSalarios-edit">
+  <div class="row mt-4 d-flex justify-content-center">
+    <div class="col-md-12 d-flex migajas" *ngIf="!add">
+      <nav class="breadcrumb">
+        <ol class="breadcrumb-ol">
+          <li class="breadcrumb-item"><a [routerLink]="['/backoffice','modulos']">Modulos</a></li>
+        </ol>
+      </nav>
+    </div>
+    <div class="col-md-12 p-0 m-0 d-flex" *ngIf="!add">
+      <mat-button-toggle-group class="tab-group ml-auto">
+        <mat-button-toggle class="tab-active" *ngIf="!add" [routerLink]="['./']">
+          Preguntas
+        </mat-button-toggle>
+        <mat-button-toggle *ngIf="fv.tpPregunta == 1" [routerLink]="['/backoffice','respuestas','list', id]">Respuestas
+        </mat-button-toggle>
+        <mat-button-toggle *ngIf="fv.tpPregunta == 2" [routerLink]="['/backoffice','reglasPregunta','list', id]">Reglas
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+
+    <div class="col-md-12 title">
+      <div *ngIf="add" class="text">
+        <p>Agregar Preguntas</p>
+      </div>
+      <div *ngIf="view" class="text">
+        <p>Ver Preguntas</p>
+      </div>
+      <div *ngIf="edit" class="text">
+        <p>Editar Preguntas</p>
+      </div>
+      <div *ngIf="delete" class="text">
+        <p>Eliminar Preguntas</p>
+      </div>
+    </div>
+    <div class="col-md-12 mt-2 form-container">
+      <form class="form row" [formGroup]="form">
+        <div class="col-md-6">
+          <mat-form-field class="text-input" appearance="outline">
+            <mat-label>Descripcion</mat-label>
+            <input matInput formControlName="descripcion">
+
+          </mat-form-field>
+          <div class="error">
+            <div *ngIf="fc.descripcion.errors?.required && submitted">
+              <p>Este Campo es Obligatorio</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="text-input" appearance="outline">
+            <mat-label>Orden</mat-label>
+            <input matInput formControlName="orden">
+
+          </mat-form-field>
+          <div class="error">
+            <div *ngIf="fc.orden.errors?.required && submitted">
+              <p>Este Campo es Obligatorio</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <ng-select [items]="tpPreguntasList" placeholder="Tipo de pregunta" bindLabel="descripcion"
+            bindValue="numerico" formControlName="tpPregunta"></ng-select>
+        </div>
+        <div class="col-md-6" *ngIf="fv.tpPregunta == 2">
+          <mat-form-field class="text-input" appearance="outline">
+            <mat-label>Valor Minimo</mat-label>
+            <input matInput formControlName="minValor">
+          </mat-form-field>
+          <div class="error">
+            <div *ngIf="fc.orden.errors?.required && submitted">
+              <p>Este Campo es Obligatorio</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6" *ngIf="fv.tpPregunta == 2">
+          <mat-form-field class="text-input" appearance="outline">
+            <mat-label>Valor Maximo</mat-label>
+            <input matInput formControlName="maxValor">
+
+          </mat-form-field>
+          <div class="error">
+            <div *ngIf="fc.orden.errors?.required && submitted">
+              <p>Este Campo es Obligatorio</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="text-input" appearance="outline">
+            <mat-label>Tipo Consultante</mat-label>
+            <mat-select formControlName="tpConsultante">
+              <mat-option *ngFor="let grup of tipConsultante" [value]="grup.alfanumerico">
+                {{grup.descripcion}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="text-input" appearance="outline">
+            <mat-label>Grupo Diagnostico</mat-label>
+            <mat-select formControlName="grupoDiag">
+              <mat-option *ngFor="let grup of diagnostico" [value]="grup.id">
+                {{grup.descripcion}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-12 button-container" *ngIf="edit || add || view || delete">
+          <div class="d-flex w-100">
+            <button mat-raised-button class="button-v" color="secondary" *ngIf="!add">
+              <mat-icon fontSet="fas" fontIcon="fa-long-arrow-alt-left" class="mt-2"
+                [routerLink]="['/backoffice','preguntas','list', preguntas.idFormulario]"></mat-icon>
+              <span>Regresar</span>
+            </button>
+            <button mat-raised-button class="button-v" color="secondary" *ngIf="add">
+              <mat-icon fontSet="fas" fontIcon="fa-long-arrow-alt-left" class="mt-2"
+                [routerLink]="['/backoffice','preguntas','list', id]"></mat-icon>
+              <span>Regresar</span>
+            </button>
+            <button class="ml-auto" mat-raised-button color="primary" (click)="save()" *ngIf="add">
+              <mat-icon fontSet="far" fontIcon="fa-save" class="mt-2"></mat-icon>
+              <span>Insertar</span>
+            </button>
+
+            <button class="ml-auto" mat-raised-button color="accent" (click)="save()" *ngIf="edit">
+              <mat-icon fontSet="far" fontIcon="fa-edit" class="mt-2"></mat-icon>
+              <span>Editar</span>
+            </button>
+
+            <button class="ml-auto" mat-raised-button color="warn" (click)="save()" *ngIf="delete">
+              <mat-icon fontSet="far" fontIcon="fa-trash-alt" class="mt-2"></mat-icon>
+              <span>Eliminar</span>
+            </button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

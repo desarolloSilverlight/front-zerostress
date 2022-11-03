@@ -1,0 +1,19 @@
+.cuerpo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cabeza{
+    border-bottom: 1px solid #969FAA;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.x{
+    background-color: white;
+    width: 100%;
+    float: right;
+    border: none;
+}

@@ -1,0 +1,122 @@
+<div class="container mt-5" style="margin: auto;" id="formulario">
+  <mat-card class="mb-5 mt-5">
+    <mat-card-title>
+      <h1 class="text-center">Cambio datos</h1>
+    </mat-card-title>
+  </mat-card>
+  <mat-card>
+    <form [formGroup]="form" enctype="multipart/form-data">
+      <div class="form row">
+        <div class="col-md-4 mb-2">
+          <mat-form-field class="text-input" appearance="outline">
+            <mat-label>Nombre</mat-label>
+            <input matInput formControlName="name" appOnly="Letters">
+          </mat-form-field>
+        </div>
+        <div class="col-md-4 mb-2">
+          <mat-form-field class="text-input" appearance="outline">
+            <mat-label>Apellido</mat-label>
+            <input matInput formControlName="lastname" appOnly="Letters">
+          </mat-form-field>
+        </div>
+        <div class="col-md-4 mb-2">
+          <img class="img-thumbnail" id="imagen">
+          <input formControlName="imagen" class="form-control-file" type="file" (change)="valor()" id="file">
+        </div>
+      </div>
+      <div class="form row">
+        <div class="col-md-6 mb-2">
+          <mat-form-field class="text-input" appearance="outline">
+            <mat-label>Tipo Documento</mat-label>
+            <mat-select formControlName="tipo_documento">
+              <mat-option value="Cedula de ciudadania">
+                Cedula de Ciudadania
+              </mat-option>
+              <mat-option value="Cedula de extrangeria">
+                Cedula de extrangeria
+              </mat-option>
+              <mat-option value="Pasaporte">
+                Pasaporte
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6 mb-2">
+          <mat-form-field class="text-input" appearance="outline">
+            <mat-label>Numero Documento</mat-label>
+            <input matInput formControlName="num_documento" appOnly='Numbers'>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="form row">
+        <div class="col-md-6 mb-2">
+          <mat-label>Género:</mat-label>
+          <mat-radio-group style="margin: 8px;" formControlName="genero">
+            <mat-radio-button value="M" style="margin: 20px;">
+              M
+            </mat-radio-button>
+            <mat-radio-button value="F">
+              F
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div class="col-md-6 mb-2">
+          <mat-form-field class="text-input" appearance="outline">
+            <mat-label>Fecha Nacimiento</mat-label>
+            <input type="date" matInput formControlName="fecha_nacimiento">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="form row">
+        <div class="col-md-6 mb-2">
+          <mat-form-field class="text-input" appearance="outline">
+            <mat-label>Estado civil</mat-label>
+            <mat-select formControlName="estado_civil">
+              <mat-option value="Casado">
+                Casado
+              </mat-option>
+              <mat-option value="Divorciado">
+                Divorciado
+              </mat-option>
+              <mat-option value="soltero">
+                Soltero
+              </mat-option>
+              <mat-option value="Unión Libre">
+                Unión Libre
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6 mb-2">
+          <mat-form-field class="text-input" appearance="outline">
+            <mat-label>Ciudad</mat-label>
+            <input matInput formControlName="ciudad" appOnly="Letters">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="form row">
+        <div class="col-md-6 mb-2">
+          <mat-form-field class="text-input" appearance="outline">
+            <mat-label>Direccion</mat-label>
+            <input matInput formControlName="direccion" appOnly="Address">
+          </mat-form-field>
+        </div>
+        <div class="col-md-6 mb-2">
+          <mat-form-field class="text-input" appearance="outline">
+            <mat-label>Telefono</mat-label>
+            <input matInput formControlName="telefono" appOnly="Numbers">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="col-md-12 button-container">
+        <div class="d-flex w-100">
+          <button class="ml-auto" mat-raised-button color="primary" (click)="save()">
+            <mat-icon fontSet="far" fontIcon="fa-save" class="mt-2"></mat-icon>
+            <span>Cambiar</span>
+          </button>
+        </div>
+      </div>
+    </form>
+  </mat-card>
+</div>

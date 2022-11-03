@@ -1,0 +1,508 @@
+:root {
+  --nav-background: #002852;
+  --principal-background: #f2f2f2;
+  --footer-background: #002852;
+  --footer-color: #fff;
+  --table-striped: #e4f0ec;
+  --table-hover: #e4f0ec;
+  --table-selected: #e4f0ec;
+  --btn-primary: #179cd8;
+  --btn-warn: #002852;
+  --btn-danger: #9C0059;
+  --btn-secondary: #003875;
+  --slide-checked-bar: #179cd8;
+  --slide-checked-thumb: #003875;
+  --font-family: "";
+  --sub-nav-background: #003875;
+  --sub-nav-color: #fff;
+  --sub-nav-background-hover: #179cd8;
+  --sub-nav-color-hover: #fff;
+  --image-height: 0px;
+  --image-width: 0px;
+  --principal-background: #f2f2f2;
+  --tab-background: #ffffff;
+  --tab-color: #000000;
+  --active-tab: #003875;
+  --active-tab-color: #ffffff;
+  --table-encabezado-thead-principal: #003875;
+  --table-encabezado-thead-secundario: #0275d8;
+}
+
+* {
+  font-family: var(--font-family);
+}
+
+
+html body .content .title .text {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  font-size: 0.8em;
+}
+
+html {
+  height: 100%;
+  background: var(--principal-background);
+}
+
+html body {
+  margin: 0px;
+  font-size: 0.9em !important;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: var(--principal-background);
+  margin: 0px;
+  font-size: 0.9em !important;
+  overflow-x: auto;
+  overflow-y: auto;
+  background: var(--principal-background);
+}
+
+html body .menu_back {
+  background: var(--nav-background);
+}
+
+html body .menu_back nav ul {
+  list-style: none;
+  overflow: hidden;
+  /* Limpiamos errores de float */
+}
+
+html body .menu_back nav ul li {
+  float: left;
+  font-size: 14px;
+}
+
+html body .menu_back nav ul li a {
+  display: block;
+  /* Convertimos los elementos a en elementos bloque para manipular el padding */
+  padding: 20px;
+  color: white;
+}
+
+html body .menu_back .mat-menu-content {
+  background: var(--sub-nav-background);
+}
+
+html body .menu_back .submenu {
+  background: var(--sub-nav-background);
+  color: var(--sub-nav-color);
+}
+
+html body .menu_back .submenu button {
+  color: var(--sub-nav-color);
+}
+
+html body .menu_back .submenu:hover {
+  color: var(--sub-nav-color-hover);
+}
+
+html body .menu_back .submenu:hover button {
+  color: var(--sub-nav-color-hover);
+}
+
+html body .menu_back nav {
+  color: var(--nav-color);
+  height: 55px;
+  width: 100%;
+}
+
+html body .menu_back nav ul {
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+html body .menu_back nav .menu {
+  background: var(--sub-nav-background);
+  color: var(--sub-nav-color);
+}
+
+html body .menu_back nav .menu:hover {
+  background: var(--sub-nav-background-hover);
+  color: var(--sub-nav-color-hover);
+}
+
+html body .contenido {
+  padding-top: 80px;
+}
+
+html body #backoffice .nav {
+  padding: 12px;
+}
+
+html body #backoffice .nav .image {
+  height: var(--image-height);
+  width: var(--image-width);
+}
+
+html body #backoffice .nav .image {
+  height: var(--image-height);
+  width: var(--image-width);
+}
+
+html body .content {
+  background: var(--principal-background);
+  height: 100% !important;
+}
+
+html body .content #content {
+  height: 100%;
+  background: var(--principal-background);
+  margin-left: 15px !important;
+}
+
+html body .content .tab-group mat-button-toggle {
+  background: var(--tab-background);
+  color: var(--tab-color);
+}
+
+html body .content .tab-group .tab-active {
+  background-color: var(--active-tab);
+  color: var(--active-tab-color);
+}
+
+html body .content #content .form-container {
+  background: white;
+  padding: 8px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px 3px rgba(0, 0, 0, 0.25);
+  margin-bottom: 30px;
+}
+
+html body .content #content .form-container mat-form-field {
+  width: 100%;
+}
+
+html body .content #content .form-container td {
+  vertical-align: middle;
+}
+
+html body .content #content .search {
+  background: #ffffff;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+html body .content #content .table-striped .mat-row:nth-child(2n + 1) {
+  background-color: var(--table-striped);
+}
+
+html body .content #content .table-striped .mat-row:not(:nth-child(2n + 1)) {
+  background-color: #ffffff;
+}
+
+html body .content #content .table-hover .mat-row:hover {
+  background-color: var(--table-hover);
+}
+
+html body .content #content .table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+html body .content #content .row-selected {
+  background-color: var(--table-selected) !important;
+}
+
+html body .content #content .title {
+  background: white;
+}
+
+html body .content #content .title .text {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  font-size: 0.8em;
+}
+
+html body .content #add .title {
+  background: white;
+}
+
+html body .content #add .title .text {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  font-size: 0.8em;
+}
+
+html body .content mat-expansion-panel-header {
+  background: #c1c1c1;
+}
+
+html body .content .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+  background-color: var(--slide-checked-bar) !important;
+}
+
+html body .content .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+  background-color: var(--slide-checked-thumb) !important;
+}
+
+html body .content .mat-checkbox-ripple .mat-ripple-element, html body .content .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  background-color: var(--slide-checked-thumb) !important;
+}
+
+html body .content .mat-checkbox-checked.mat-primary .mat-checkbox-background {
+  background-color: var(--slide-checked-thumb) !important;
+}
+
+html body .content .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick {
+  color: var(--slide-checked-bar) !important;
+}
+
+html body .content .mat-form-field.mat-form-field-invalid .mat-form-field-label {
+  color: var(--slide-checked-thumb) !important;
+}
+
+html body .content .btn-primary, html body .content button.mat-primary, html body .content a.mat-primary {
+  background-color: var(--btn-primary) !important;
+  color: #fff !important;
+}
+
+html body .content .btn-warn, html body .content button.mat-accent, html body .content a.mat-accent {
+  background-color: var(--btn-warn) !important;
+  color: #fff !important;
+}
+
+html body .content .btn-secondary, html body .content button.mat-secondary, html body .content a.mat-secondary {
+  background-color: var(--btn-secondary) !important;
+  color: #fff !important;
+}
+
+html body .content .btn-danger, html body .content button.mat-warn, html body .content a.mat-warn {
+  background-color: var(--btn-danger) !important;
+  color: #fff !important;
+}
+
+html footer {
+  background-color: var(--footer-background);
+  color: var(--footer-color);
+}
+
+html .full-container {
+  height: 100%;
+}
+
+html .w-100 {
+  width: 100% !important;
+}
+
+html #theme {
+  overflow-x: hidden;
+}
+
+html .menu {
+  float: left;
+  height: 100% !important;
+  width: 20% !important;
+  text-align: center;
+}
+
+html .menu_back {
+  background: var(--nav-background);
+}
+
+html .menu_back nav {
+  color: var(--nav-color);
+  height: 55px;
+  width: 100%;
+}
+
+html .menu_back nav ul {
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+html .menu_back nav .menu {
+  background: var(--sub-nav-background);
+  color: var(--sub-nav-color);
+}
+
+html .menu_back nav .menu:hover {
+  background: var(--sub-nav-background-hover);
+  color: var(--sub-nav-color-hover);
+}
+
+html .form-container {
+  background: white;
+  padding: 8px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px 3px rgba(0, 0, 0, 0.25);
+  margin-bottom: 30px;
+}
+
+html .form-container mat-form-field {
+  width: 100%;
+}
+
+html .form-container .mat-form-field-wrapper {
+  padding: 0px !important;
+}
+
+html .form-container .button-container {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+html .form-container .error p {
+  font-weight: bolder;
+  color: red !important;
+}
+
+html .form-container .small-required {
+  font-weight: bolder;
+  color: red;
+}
+
+html .title {
+  padding-right: 0px;
+  padding-left: 0px;
+  font-size: 1.6em;
+  box-shadow: 0 8px 16px 3px rgba(0, 0, 0, 0.25);
+}
+
+html .title .text {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+html .title p {
+  margin: 0px !important;
+}
+
+html .search {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+html .sub-title {
+  font-size: 1.5em;
+  text-align: center;
+  margin-top: 14px;
+  margin-bottom: 25px;
+}
+
+html .sub-title h4 {
+  margin: 1px;
+}
+
+html .error {
+  width: 100%;
+}
+
+html .ng-select {
+  padding: 0px !important;
+}
+
+html .table-encabezado {
+  padding: 0px;
+  border-spacing: 0px !important;
+}
+
+html .table-encabezado table {
+  border-spacing: 0px !important;
+}
+
+html .table-encabezado table .thead-principal {
+  background: var(--table-encabezado-thead-principal);
+  color: white;
+}
+
+html .table-encabezado table .thead-secundario {
+  background: var(--table-encabezado-thead-secundario);
+  color: white;
+}
+
+html .table-encabezado table th {
+  text-align: center;
+}
+
+html .table-encabezado table tr td {
+  text-align: center;
+}
+
+.migajas {
+  padding: 0px;
+}
+
+.breadcrumb {
+  list-style: none;
+  background-color: #eee;
+  width: 100%;
+}
+
+.breadcrumb-ol {
+  padding-left: 7px;
+}
+
+/* Display list items side by side */
+.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+.breadcrumb li + li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+
+.mat-expansion-panel {
+  overflow: initial !important;
+}
+
+.TmTemaVar-complete .mat-form-field-underline {
+  bottom: 0.34375em !important;
+}
+
+.spinner-container {
+  height: 360px;
+  width: 390px;
+  top: 40%;
+  position: fixed;
+  left: 40%;
+}
+
+.spinner-container mat-spinner {
+  margin: 130px auto 0 auto;
+}
+
+.ng-select.ng-select-opened[ng-reflect-required] .ng-placeholder:after {
+  content: ' *';
+  color: red;
+}
+
+.ng-select[ng-reflect-required] .ng-placeholder:after {
+  content: ' *';
+  color: gray;
+}
+
+.mat-slide-toggle[ng-reflect-required] .mat-slide-toggle-content:after {
+  content: ' *';
+  color: red;
+}
+
+.content {
+  overflow: initial !important;
+}
+
+#side-by-side::after {
+  content: "nom1";
+}
+
+body.swal2-height-auto {
+  height: inherit !important;
+}

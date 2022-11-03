@@ -1,0 +1,55 @@
+<div id="add" class="container-fluid p-2 TmSalarios-edit">
+  <div class="row mt-4 d-flex justify-content-center">
+    <div class="col-md-12 d-flex migajas">
+      <nav class="breadcrumb">
+        <ol class="breadcrumb-ol">
+          <li class="breadcrumb-item"><a [routerLink]="['/backoffice','roles']">Perfiles</a></li>
+        </ol>
+      </nav>
+    </div>
+    <div class="col-md-12 p-0 m-0 d-flex">
+      <mat-button-toggle-group class="tab-group ml-auto">
+        <mat-button-toggle [routerLink]="['/backoffice','roles', 'edit', 'e', id]">Perfil
+        </mat-button-toggle>
+        <mat-button-toggle class="tab-active"
+                           [routerLink]="['./']">
+          Asociar Opciones
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+
+
+    <div class="col-md-12 title">
+      <div class="text">
+        <p>Asociar Opciones</p>
+      </div>
+    </div>
+    <div class="col-md-12 mt-2 form-container">
+      <form class="form row" [formGroup]="form">
+
+        <div class="col-md-12" *ngFor="let modulo of modulos">
+          <h3>{{modulo.titulo}}</h3>
+          <mat-divider></mat-divider>
+          <div class="row">
+            <div class="col-md-4 col-6" *ngFor="let opcion of filterOpciones(modulo)">
+              <mat-checkbox [formControlName]="'checkbox-'+ opcion.id">{{opcion.titulo}}</mat-checkbox>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-12 button-container">
+          <div class="d-flex w-100">
+            <button class="ml-auto" mat-raised-button color="accent" (click)="save()">
+              <mat-icon fontSet="far" fontIcon="fa-edit" class="mt-2"></mat-icon>
+              <span>Editar</span>
+            </button>
+          </div>
+        </div>
+
+
+      </form>
+    </div>
+  </div>
+</div>
+

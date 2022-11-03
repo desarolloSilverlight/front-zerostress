@@ -1,0 +1,114 @@
+.btn-tab{
+    height: 180px;
+    width: 182px;
+    border-radius: 15px;
+    color: #646464;
+    border: 1px solid #C5CCD4;
+}
+
+.btn-tab-cambio{
+    background-color: #45669C;
+    border: 1px solid #45669C;
+    height: 180px;
+    width: 182px;
+    color: white;
+    border-radius: 15px;
+    outline: none;
+}
+
+.content-check{
+    width: 45px;
+    height: 45px;
+    position: relative;
+    top : -27px;
+    right: -158px;
+}
+
+.border-cir{
+    border-radius: 200px;
+    border: 1px solid #84C5C5;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cir-check{
+    background-color: #84C5C5;
+    border-radius: 200px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.check{
+    width: 20px;
+    height: 20px;
+}
+
+h1{
+    color: #1bc88c;
+    font-size: 35px;
+    max-width: 700px;
+    margin: 0 auto 20px;
+    line-height: 1.2;
+}
+
+.logos{
+    height: 40px;
+    width: 40px;
+}
+
+.content-elemts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.content-elemts-cambio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    top:-27px;
+}
+
+.rounded-circle{
+    background-color: #84C5C5;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-button{
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.btn-black {
+    background-color: #45669C;
+    border-radius: 100px;
+    width: 150px;
+    color: #fff;
+}
+
+.centrar-recuadro{
+    text-align: center;
+    margin-top: 45px;
+    border-radius: 25px;
+    border: 1px solid #C5CCD4;
+    -webkit-box-shadow: -6px 5px 5px -1px rgba(0,0,0,0.19);
+-moz-box-shadow: -6px 5px 5px -1px rgba(0,0,0,0.19);
+box-shadow: -6px 5px 5px -1px rgba(0,0,0,0.19);
+}
+
+.separar{
+    margin-top: 25px;
+}

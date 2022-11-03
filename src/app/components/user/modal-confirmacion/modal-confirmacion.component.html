@@ -1,0 +1,21 @@
+<div mat-dialog-title class="cabeza">
+    <div class="tittle">
+        <h2>Confirmación</h2>
+    </div>
+    <button (click)="onClickNO()" class="x">
+        <span class="float-right"><i class="fas fa-times" style="color: #969FAA;"></i></span>
+    </button>
+</div>
+<div mat-dialog-content>
+    <div class="content">
+        <img src="../../../../assets/image/dialogCofir.png" width="40px" height="40px" alt="">
+    </div>
+    <div class="content se">
+        <p>A continuación dos íconos que pueden usarse para <br> confirmación de acciones positivas
+            y negativas por parte del <br> usuario.</p>
+    </div>
+</div>
+<div mat-dialog-actions style="margin-top: 15px;" class="pie">  
+    <button class="btn btn-black" (click)="onClickNO()">Cerrar</button>
+    <button class="btn btn-primary" (click)="onClickNO()">Aceptar</button>
+</div>

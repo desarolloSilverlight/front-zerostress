@@ -1,0 +1,95 @@
+<h2>
+  Como es tu primera vez por favor contesta la siguientes preguntas
+</h2>
+
+<mat-vertical-stepper [linear]="true" #stepper>
+  <mat-step [stepControl]="formSbCausas">
+    <form [formGroup]="formSbCausas">
+      <ng-template matStepLabel>¿Que energía acompaña mas tu estrés?</ng-template>
+      <mat-accordion>
+        <mat-expansion-panel *ngFor="let cat of catEstres">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{cat.descripcion}}
+            </mat-panel-title>
+
+          </mat-expansion-panel-header>
+          <mat-radio-group formControlName="idSbCausa">
+            <mat-radio-button class="col-md-4" *ngFor="let sbCausa of filterCatCausa(cat.id)"
+
+                              [value]="sbCausa.id">{{sbCausa.descripcion}}</mat-radio-button>
+          </mat-radio-group>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="formPartCuerpo">
+    <form [formGroup]="formPartCuerpo">
+      <ng-template matStepLabel>Señala en que parte del cuerpo se manifiesta tu estrés</ng-template>
+      <mat-accordion>
+        <mat-expansion-panel *ngFor="let partCuerpoCat of partesCat">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{partCuerpoCat.titulo}}
+            </mat-panel-title>
+
+          </mat-expansion-panel-header>
+          <ng-container formArrayName="parts">
+            <div class="col-md-4" *ngFor="let parte of filterPartes(partCuerpoCat.id); let i = index">
+              <mat-checkbox [formControlName]="i">{{parte.descripcion}}</mat-checkbox>
+            </div>
+          </ng-container>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext (click)="changePartes()">Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="formSensaciones">
+    <form [formGroup]="formSensaciones">
+      <ng-template matStepLabel>¿Como es tu sensación?</ng-template>
+      <div *ngFor="let parte of partesSelected">
+        <ng-container [formArrayName]="'part'+parte.id">
+          <p>{{parte.descripcion}}</p>
+          <div class="row">
+            <div class="col-md-6">
+              <ng-select [items]="tpSensaciones" [formControlName]="0" placeholder="¿Como es tu sensasion?"
+                         bindValue="id"
+                         bindLabel="descripcion" appearance="outline">
+
+              </ng-select>
+            </div>
+            <div class="col-md-6">
+              <ng-select [items]="tpSensacionesComo" [formControlName]="1" placeholder="¿Se siente?" bindValue="id"
+                         bindLabel="descripcion" appearance="outline">
+
+              </ng-select>
+            </div>
+            <div class="col-md-6">
+              <mat-label>Intensidad</mat-label>
+              <mat-slider [max]="10" [min]="1" [thumbLabel]="true"
+                          [formControlName]="2"></mat-slider>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Finalizar</ng-template>
+    <p>Ya has completado el formulario, por favor asegurate que las preguntas hayan sido repondidas correctamente</p>
+    <button mat-button matStepperPrevious>Back</button>
+    <button mat-button matStepperNext (click)="submit()">Next</button>
+  </mat-step>
+</mat-vertical-stepper>
+
+

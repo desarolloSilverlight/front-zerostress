@@ -1,0 +1,79 @@
+<div id="add" class="container-fluid p-2 TmSalarios-edit">
+  <div class="row mt-4 d-flex justify-content-center">
+
+
+    <div class="col-md-12 title">
+      <div *ngIf="add" class="text">
+        <p>Agregar FormulariosEmpresas</p>
+      </div>
+      <div *ngIf="view" class="text">
+        <p>Ver FormulariosEmpresas</p>
+      </div>
+      <div *ngIf="edit" class="text">
+        <p>Editar FormulariosEmpresas</p>
+      </div>
+      <div *ngIf="delete" class="text">
+        <p>Eliminar FormulariosEmpresas</p>
+      </div>
+    </div>
+    <div class="col-md-12 mt-2 form-container">
+      <form class="form row" [formGroup]="form">
+        <div class="col-md-6">
+          <mat-form-field class="text-input" appearance="outline">
+            <mat-label>IdFormulario</mat-label>
+            <mat-select formControlName="idFormulario">
+              <mat-option *ngFor="let form of dataSourceF" [value]="form.id">
+                {{form.titulo}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div class="error">
+            <div *ngIf="fc.idFormulario.errors?.required && submitted">
+              <p>Este Campo es Obligatorio</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="text-input" appearance="outline">
+            <mat-label>IdEmpresa</mat-label>
+            <mat-select formControlName="idEmpresa">
+              <mat-option *ngFor="let emp of dataSourceE" [value]="emp.id">
+                {{emp.razonSocial}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div class="error">
+            <div *ngIf="fc.idEmpresa.errors?.required && submitted">
+              <p>Este Campo es Obligatorio</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 button-container" *ngIf="edit || add || view || delete">
+          <div class="d-flex w-100">
+            <button mat-raised-button class="button-v" color="secondary">
+              <mat-icon fontSet="fas" fontIcon="fa-long-arrow-alt-left" class="mt-2"
+                [routerLink]="['/backoffice','formulariosEmpresas']"></mat-icon>
+              <span>Regresar</span>
+            </button>
+            <button class="ml-auto" mat-raised-button color="primary" (click)="save()" *ngIf="add">
+              <mat-icon fontSet="far" fontIcon="fa-save" class="mt-2"></mat-icon>
+              <span>Insertar</span>
+            </button>
+
+            <button class="ml-auto" mat-raised-button color="accent" (click)="save()" *ngIf="edit">
+              <mat-icon fontSet="far" fontIcon="fa-edit" class="mt-2"></mat-icon>
+              <span>Editar</span>
+            </button>
+
+            <button class="ml-auto" mat-raised-button color="warn" (click)="save()" *ngIf="delete">
+              <mat-icon fontSet="far" fontIcon="fa-trash-alt" class="mt-2"></mat-icon>
+              <span>Eliminar</span>
+            </button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

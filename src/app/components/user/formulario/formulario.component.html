@@ -1,0 +1,46 @@
+<app-navbar></app-navbar>
+<div class="container mt-5" id="formulario">
+  <mat-card class="mb-5 mt-5">
+    <mat-card-title>
+      <h1 class="text-center">{{formulario.titulo}}</h1>
+    </mat-card-title>
+  </mat-card>
+  <mat-card>
+    <!--    <div class="row mb-5">-->
+    <!--      <div class="col-12">-->
+    <!--        <div>-->
+    <!--          <div class="mat-card-title">-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </div>-->
+
+    <!--    </div>-->
+
+    <div class="row mt-5">
+      <div class="col-12">
+        <p style="font-size: 24px;" class="text-center">{{pregunta.descripcion}}</p>
+      </div>
+    </div>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <div class="row mt-5 mb-5">
+        <div class="col-12" *ngIf="pregunta.tpPregunta == 1">
+          <mat-radio-group formControlName="respuesta">
+            <mat-radio-button class="col-12" *ngFor="let respuesta of respuestas" [value]="respuesta">
+              {{respuesta.descripcion}}</mat-radio-button>
+          </mat-radio-group>
+          <p class="text-danger" *ngIf="submited && form.controls.respuesta.errors?.required">Por favor responde la
+            pregunta
+            para continuar</p>
+        </div>
+        <div class="col-12 text-center" *ngIf="pregunta.tpPregunta == 2">
+          <mat-slider [max]="pregunta.maxValor" [min]="pregunta.minValor" [thumbLabel]="true"
+            formControlName="respuesta"></mat-slider>
+        </div>
+      </div>
+      <div class="row mt-5 justify-content-end mr-2">
+        <button mat-raised-button class="p-2" color="primary" type="submit">Continuar</button>
+      </div>
+    </form>
+  </mat-card>
+
+</div>

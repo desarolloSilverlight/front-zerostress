@@ -1,0 +1,163 @@
+.btn-primary {
+    background-color: #24214A !important;
+    border-radius: 100px;
+    width: 105px;
+    color: #fff;
+    margin-left: 15px;
+}
+
+.btn-black {
+    background-color: #F5F5F5 !important;
+    border-radius: 100px;
+    border: 1px solid gray;
+    width: 105px;
+    color: black;
+}
+
+.pie{
+    border-top: 1px solid #F5F5F5;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.se{
+    text-align: center;
+}
+
+.calificaciones{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid #C5CCD4;
+}
+
+.marca{
+    border-radius: 50%;
+    border: 1px solid #00A6FF;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+}
+
+.centrar-marca{
+    margin-top: 5px;
+    font-weight: bold;
+    color: #24214A;
+}
+
+.cabeza{
+    border-bottom: 1px solid #969FAA;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h2{
+    font-weight: bold;
+    color:#24214A;
+    margin: 5px;
+    margin-left: 50px;
+}
+
+p{
+    font-size: 15px;
+}
+
+.tittle{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.x{
+    background-color: white;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+.con{
+    display: flex;
+}
+
+.bor{
+    width: 28px;
+    height: 28px;
+    border: none;
+    border-radius: 50%;
+    margin: auto;
+    position: relative;
+    top: -17px;
+    left: 61px;
+}
+
+.borders{
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    margin: auto;
+    position: relative;
+    top: -17px;
+    left: 43px;
+    background-color: rgba(255, 200, 44, 0);
+}
+
+.borderT{
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    margin: auto;
+    position: relative;
+    top: -17px;
+    left: 51px;
+    background-color: rgba(255, 200, 44, 0);
+}
+
+.borderF{
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    margin: auto;
+    position: relative;
+    top: -17px;
+    left: 55px;
+    background-color: rgba(255, 200, 44, 0);
+}
+
+.emoticon{
+    width: 28px;
+    height: 28px;
+}
+
+.emoticones{
+    width: 33px;
+    height: 33px;
+}
+
+.content-emote{
+    padding: 10px 10px 0px 10px;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    background-color: white;
+    color: black;
+}
+
+.content-emote-sele{
+    padding: 10px 10px 0px 10px;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #00AEEF;
+    color:white
+}

@@ -1,0 +1,133 @@
+<div class="sidenav">
+  <div class="login-main-text">
+    <img class="logo-sidenav" src="../../../../assets/image/isotipo_white-positive.png">
+    <div style="padding-top: 12px;">
+      <p style="font-weight: bold;"> Inicia un increíble viaje</p>
+      <p style="font-weight: lighter; margin-top: 20px;"> {{tittle}} </p>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="col-md-8 col-sm-12" style="margin: 0px auto;">
+    <div class="login-cab">
+      <button class="atras" routerLink="/login">
+        <img src="../../../../assets/image/atras.png" width="30px" height="30px" alt="">
+      </button>
+      <div style="width: 90%">
+        <img class="logo-login" src="../../../../assets/image/logo-Zero-Stress-black.png">
+      </div>
+      <h1 class="text-logo">Registrarme como:</h1>
+    </div>
+    <div class="login-form">
+      <div style="display:flex;">
+        <div style="margin:auto; padding-bottom: 35px;" *ngFor="let a of tpRegistro">
+          <button (click)="activateForm(a.id, a.numerico)" class="btn-tab" [id]="a.id" type="button">
+            <span><img *ngIf="a.id==valor" class="check" src="../../../../assets/image/Raster.png">
+              {{a.descripcion}}</span>
+          </button>
+        </div>
+      </div>
+      <form [formGroup]="form" (ngSubmit)="submit()">
+
+        <div class="form-row">
+          <div class="col-md-6 mb-2" *ngIf="fv.tpRegistro != null && fv.tpRegistro != 1">
+            <label>Nombre</label>
+            <input type="text" class="form-control" placeholder="Nombre" formControlName="nombre">
+          </div>
+          <div class="col-md-6 mb-2" *ngIf="fv.tpRegistro != null && fv.tpRegistro != 1">
+            <label>Apellidos</label>
+            <input type="text" class="form-control" placeholder="Apellidos" formControlName="apellidos">
+          </div>
+          <div class="col-md-6 mb-2" *ngIf="fv.tpRegistro == 1">
+            <label>Nit</label>
+            <input type="text" class="form-control" placeholder="Nit" formControlName="nit">
+          </div>
+          <div class="col-md-6 mb-3" *ngIf="fv.tpRegistro == 1">
+            <label>Razon Social</label>
+            <input type="text" class="form-control" placeholder="Razon Social" formControlName="razonSocial">
+          </div>
+        </div>
+        <hr *ngIf="fv.tpRegistro == 1">
+        <p style="font-weight: bold;" *ngIf="fv.tpRegistro == 1"> Datos de quien hace el registro </p>
+        <div class="form-row">
+          <div class="col-md-6 mb-3" *ngIf="fv.tpRegistro == 1">
+            <label>Telefono de Contacto</label>
+            <input type="text" class="form-control" placeholder="Telefono de Contacto"
+              formControlName="telefonoContacto">
+          </div>
+          <div class="col-md-6 mb-3" *ngIf="fv.tpRegistro == 1">
+            <label>Nombre de Contacto</label>
+            <input type="text" class="form-control" placeholder="Nombre de Contacto" formControlName="nombreContacto">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label>Email</label>
+            <input type="email" class="form-control" placeholder="Email" formControlName="email">
+          </div>
+          <div class="col-md-5 mb-3" *ngIf="fv.tpRegistro != null && fv.tpRegistro != 1">
+            <label>Codigo de Invitación</label>
+            <input type="text" class="form-control" placeholder="012345" formControlName="codigoInvitacion">
+          </div>
+          <div class="col-md-1 mb-3" style="padding-top: 30px;" *ngIf="fv.tpRegistro != null && fv.tpRegistro != 1">
+            <input (click)="ValidarInvitacion()" id="check" type="checkbox" class="form-check" placeholder=""
+              matTooltip="Click para verificar tu código">
+          </div>
+
+          <div class="col-md-6 mb-3" *ngIf="fv.tpRegistro == 1">
+            <label>Dirección</label>
+            <input type="text" class="form-control" placeholder="Dirección" formControlName="direccion">
+          </div>
+        </div>
+        <div style="padding-bottom: 10px;" class="form-row">
+          <div class="col-md-6 mb-3">
+            <label>Contraseña</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+              </div>
+              <input [type]="show ? 'text': 'password'" class="form-control" placeholder="********"
+                formControlName="password">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button">
+                  <fa-icon *ngIf="!show" [icon]="['far','eye']" (click)="show= !show"></fa-icon>
+                  <fa-icon *ngIf="show" [icon]="['far','eye-slash']" (click)="show= !show"></fa-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Repetir Contraseña</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+              </div>
+              <input [type]="show ? 'text': 'password'" class="form-control" placeholder="********"
+                (keyup)="Contrasenas($event)">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button">
+                  <fa-icon *ngIf="!show" [icon]="['far','eye']" (click)="show= !show"></fa-icon>
+                  <fa-icon *ngIf="show" [icon]="['far','eye-slash']" (click)="show= !show"></fa-icon>
+                </button>
+              </div>
+            </div>
+            <div class="error">
+              <div *ngIf="equals">
+                <p>Contraseña Invalida</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p style="font-weight: 500; font-size: 12px;">
+          <span><input class="terminos" id="terminos" type="checkbox"
+              matTooltip="Aceptar terminos y condiciones"></span>
+          Al registrarte, aceptas nuestras comunicaciones y <a (click)="OpenDialog()" href="javascript:void(0)">terminos de uso</a>.
+          <br>¿Ya tienes una cuenta? <a href="#">Ingresa aquí</a>
+        </p>
+        <div style="padding-bottom: 30px;">
+          <button type="submit" class="btn btn-black">Registrarme</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

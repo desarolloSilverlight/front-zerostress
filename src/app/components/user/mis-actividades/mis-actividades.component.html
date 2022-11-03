@@ -1,0 +1,117 @@
+<div *ngIf="consultas.length == 0" style="height: 100%;">
+  <h2 style="width: 100%; text-align: center; position: absolute;
+  top: 50%;">No tienes actividades en curso</h2>
+</div>
+
+
+<div *ngFor="let consulta of consultas">
+  <div class="marcacion">
+    <div class="content-progress">
+      <div class="ruta-image">
+        <img class="ruta" src="../../../../assets/image/ruta.png">
+      </div>
+      <div class="estado-actividad">
+        <h4 style="margin: 0; font-weight: bold;">
+          {{consulta.tema.grupo.ruta}}
+          <br>
+          <p style="margin: 0; font-weight: lighter;">{{consulta.contestadas}} de {{consulta.total}} actividades
+            completadas</p>
+        </h4>
+      </div>
+      <div class="centrar">
+        <div class="sliderContent">
+          <input disabled class="slider {{'inputRange' + consulta.id}}" type="range" [max]="consulta.total" min="0"
+                 [value]="consulta.contestadas">
+        </div>
+      </div>
+      <div class="float-right">
+        <button class="buttons" (click)="scrollLeft(consulta.id)">
+          <span> <i class="fas fa-chevron-left"></i></span>
+        </button>
+        <button class="buttons" (click)="scrollRigth(consulta.id)">
+          <span><i class="fas fa-chevron-right"></i></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="actividades">
+    <div class="actividades-scroll actividades-scroll-{{consulta.id}}" *ngIf="consulta.flujos">
+      <button class="actividad " [ngClass]="{'actividad-realizada': consulta.flujos[i] != undefined}"
+              [disabled]="i > consulta.flujos.length"
+              (click)="Actividad(actividad.id, consulta.flujos[i], i, consulta.contenidos, consulta.id)"
+              *ngFor="let actividad of consulta.contenidos; index as i"
+              style="position:relative; {{actividad.titulo.length > 21 ? consulta.flujos[i] != undefined ? 'top: -37px;': 'top: -6px;': ''}} {{i == 0 ? 'margin-top: 51px;':''}}">
+        <div *ngIf="consulta.flujos[i]" class="content-check">
+          <div class="border-cir">
+            <div class="cir-check">
+              <img class="check" src="../../../../assets/image/Raster.png">
+            </div>
+          </div>
+        </div>
+        <div style="width: 100%; display:flex; flex-wrap: wrap; justify-content: center; align-items: center;"
+             class="header-actividad">
+          <div style="width: 80%; display:flex; margin-top: 20px;">
+            <img *ngIf="actividad.tpContenido === 3" src="../../../../assets/image/audio.png" width="40px"
+                 height="40px">
+            <img *ngIf="actividad.tpContenido === 4" src="../../../../assets/image/Grafico.png" width="40px"
+                 height="40px">
+            <img *ngIf="actividad.tpContenido === 5" src="../../../../assets/image/actividad.png" width="40px"
+                 height="40px">
+            <div style="color:#646464; margin-left: 10px; display:flex; justify-content: center; align-items: center;">
+              <h3 style="margin: 0px 0px 0px 0px;" *ngIf="actividad.tpContenido === 3">AUDIO</h3>
+              <h3 style="margin: 0px 0px 0px 0px;" *ngIf="actividad.tpContenido === 4">GRÁFICO</h3>
+              <h3 style="margin: 0px 0px 0px 0px;" *ngIf="actividad.tpContenido === 5">ACTIVIDAD</h3>
+            </div>
+          </div>
+        </div>
+        <div style="width: 100%; display:flex; flex-wrap: wrap; justify-content: center; align-items: center;"
+             class="header-actividad">
+          <div style="width: 80%; border-bottom: 1px solid #C5CCD4; color: #646464; text-align: left;">
+            <h4 style="font-weight: bold; width: 100%;
+            white-space: break-spaces; overflow: hidden; {{actividad.titulo.length > 21 ? 'margin-bottom: 4px;': ''}}">{{actividad.titulo}}</h4>
+          </div>
+        </div>
+        <div
+          style="margin-top:5px; margin-bottom: 10px; width: 100%; display:flex; flex-wrap: wrap; justify-content: center; align-items: center;"
+          class="header-actividad">
+          <div style="width: 80%; display: flex;">
+            <p style="color: #646464;" *ngIf="consulta.flujos[i]"><span
+              style=" font-weight: bold;">Actividad realizada</span> <br> <span
+              style="text-align: left;">{{consulta.flujos[i].fecha | date:'dd/MM/yyyy'}}</span></p>
+            <p style="color: #646464; font-weight: bold;" *ngIf="!consulta.flujos[i]">Actividad pendiente</p>
+
+            <div class="con" *ngIf="consulta.flujos[i]">
+              <div class="borders">
+              </div>
+              <div>
+                <img *ngIf="consulta.flujos[i].calificacion == 1" src="../../../../assets/image/enojado.png"
+                     class="emoticones">
+                <img *ngIf="consulta.flujos[i].calificacion == 2" src="../../../../assets/image/triste.png"
+                     class="emoticones">
+                <img *ngIf="consulta.flujos[i].calificacion == 3" src="../../../../assets/image/feliz.png"
+                     class="emoticones">
+                <img *ngIf="consulta.flujos[i].calificacion == 4" src="../../../../assets/image/encantado.png"
+                     class="emoticones">
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </button>
+    </div>
+    <div style="display: flex; margin-top: 15px;">
+      <div style="display: flex;">
+        <div class="cir">
+          <img src="../../../../assets/image/comentarios.png" width="30px" height="30px">
+        </div>
+        <h3>Comentarios de mi Neurofacilitador</h3>
+      </div>
+      <!--      <button (click)="OpenDialogC()" style="display: flex; color: red; border: none; background-color: white;">-->
+      <!--        <img src="../../../../assets/image/atencion.png" width="50px" height="50px">-->
+      <!--        <h3>Califica el alivio de tus síntomas</h3>-->
+      <!--      </button>-->
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<div style="width: 100%; text-align: center; margin: 15px;">
+  <div>
+    <img style="border-radius: 50%; border: 1px solid gray;" width="35px" height="35px"
+         src="../../../../assets/image/ruta.png">
+  </div>
+  <div>
+    <p><span class="negrilla"> Tu ruta: </span> {{ruta}}</p>
+  </div>
+</div>
+<div class="centrar-recuadro">
+  <div class="separar">
+    <h1 class="negrilla">Ahora, selecciona la opción que más te genere estrés</h1>
+    <div style="display: flex; flex-wrap: wrap; padding-top: 25px; padding-bottom: 25px;">
+      <div style="margin:0 auto;" *ngFor="let estres of causa">
+        <button (click)="cambioApariencia(estres.id)" class="btn-tab" [id]="estres.id" type="button">
+          <div *ngIf="activate==estres.id" class="content-check">
+            <div class="border-cir">
+              <div class="cir-check">
+                <img class="check" src="../../../../assets/image/Raster.png">
+              </div>
+            </div>
+          </div>
+          <div class="content-elemts" [id]="estres.descripcion">
+            <div class="rounded-circle">
+              <img class="logos" [src]="img+estres.id+'.png'">
+            </div>
+            <div style="width: 100%;">
+              <p class="text-button">{{estres.descripcion2}}</p>
+            </div>
+          </div>
+        </button>
+      </div>
+    </div>
+    <div style="margin-top: 40px; margin-bottom: 40px;">
+      <button (click)="next()" class="btn btn-black">
+        continuar
+      </button>
+    </div>
+  </div>
+</div>
+<app-progreso-reconocimiento [progress]="2" (next)="next()"></app-progreso-reconocimiento>
+
+
+
+
+
