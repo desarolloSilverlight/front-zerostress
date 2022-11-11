@@ -10,8 +10,8 @@
 }
 
 .btn-tab-cambio{
-    background-color: #45669C;
-    border: 1px solid #45669C;
+    background-color: #1bc88c;
+    border: 1px solid #1bc88c;
     height: 180px;
     width: 190px;
     color: white;
@@ -52,8 +52,11 @@
 }
 
 h1{
-    font-weight: bold;
-    color: #45669C;
+    color: #1bc88c !important;
+    font-size: 35px;
+    max-width: 700px;
+    margin: 0 auto 20px;
+    line-height: 1.2;
 }
 
 .logos{
@@ -92,9 +95,10 @@ h1{
 }
 
 .btn-black {
-    background-color: #45669C !important;
+    background-color: #1bc88c !important;
     border-radius: 100px;
     width: 150px;
+    font-size: 18px !important;
     color: #fff;
 }
 

@@ -51,8 +51,15 @@ mat-sidenav{
 
 .but {
   border-radius: 25px;
-  margin-left: 5px;
-  color: #969FAA;
+  font-size: 18px;
+  margin: 0 10px;;
+  color: #ffffff;
+  font-weight: 500;
+  background-color: #1bc88c;
+  max-width: 200px;
+  display: flex !important;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .butS {
@@ -73,11 +80,26 @@ mat-sidenav{
   color: #45669C!important;
 }
 .but span i{
-  color: #969FAA;
+  color: #fff;
 }
 
 @media (max-width: 770px){
   .content{
     padding: 40px 20px;
   }
+}
+
+.navbar{
+  display: none !important;
+}
+
+.mat-list-base .mat-list-item .mat-list-item-content, .mat-list-base .mat-list-option .mat-list-item-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 16px;
+  position: relative;
+  height: inherit;
+  background-color: red !important;
 }

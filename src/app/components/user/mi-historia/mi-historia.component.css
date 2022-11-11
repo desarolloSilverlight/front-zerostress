@@ -132,10 +132,6 @@ h3 {
 
 .actividades-scroll {
   width: auto;
-  height: 200px;
-  overflow-y: hidden;
-  overflow-x: auto;
-  white-space: nowrap;
 }
 
 .actividad {
@@ -146,7 +142,7 @@ h3 {
   border-radius: 15px;
   border: 1px solid #C5CCD4;
   width: 23%;
-  min-width: 380px;
+  min-width: 300px;
   background-color: white;
   margin-left: 12px;
   margin-bottom: 12px;

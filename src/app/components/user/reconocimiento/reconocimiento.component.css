@@ -7,13 +7,14 @@
 }
 
 .btn-tab-cambio{
-    background-color: #45669C;
-    border: 1px solid #45669C;
+    background-color: #1bc88c;
+    border: 1px solid #1bc88c;
     height: 180px;
     width: 182px;
     color: white;
     border-radius: 15px;
     outline: none;
+    font-size: 18px;
 }
 
 .content-check{
@@ -93,9 +94,10 @@ h1{
 }
 
 .btn-black {
-    background-color: #45669C;
+    background-color: #1bc88c !important;
     border-radius: 100px;
     width: 150px;
+    font-size: 18px !important;
     color: #fff;
 }
 
