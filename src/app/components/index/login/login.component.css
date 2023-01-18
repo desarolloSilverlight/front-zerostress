@@ -16,6 +16,7 @@ body {
   align-items: baseline;
   margin-left: 100px;
   margin-top: 25px;
+  display: none !important;
 }
 
 label{
@@ -122,6 +123,7 @@ label{
     align-items: baseline;
     margin-left: 20px;
     margin-top: 25px;
+    display: none !important;
   }
 
 }
@@ -161,6 +163,7 @@ label{
     align-items: baseline;
     margin-left: 5px;
     margin-top: 25px;
+    display: none !important;
   }
 
   .col-sm-12{
@@ -211,6 +214,7 @@ label{
     align-items: baseline;
     margin-left: 80px;
     margin-top: 35px;
+    display: none !important;
   }
 
   .rpass{

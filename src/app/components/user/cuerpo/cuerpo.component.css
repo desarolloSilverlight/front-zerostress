@@ -15,19 +15,14 @@
 }
 
 .btn-black {
-    background-color: #1bc88c !important;
+    background-color: #45669C !important;
     border-radius: 100px;
     width: 150px;
-    font-size: 18px !important;
     color: #fff;
 }
 
 h2{
-    color: #1bc88c;
-    font-size: 35px;
-    max-width: 700px;
-    margin: 0 auto 20px;
-    line-height: 1.2;
+    color: #45669C;
 }
 
 .content-cuerpo{

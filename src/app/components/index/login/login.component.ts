@@ -26,16 +26,18 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    localStorage.clear();
+    //localStorage.clear();
     this.activatedRoute.queryParams.subscribe(params => {
       this.token = params['t'];
       this.refreshToken = params['re'];
       if (this.token !== undefined && this.refreshToken !== undefined) {
         localStorage.setItem('token', this.token);
         const tokenDecodedParameters = this.authService.decodedToken(this.token);
-        const expParameters = Number(tokenDecodedParameters.exp) * 1000;
+        const expParameters = Number(tokenDecodedParameters.exp) * 100000;
         localStorage.setItem('expiredToken', expParameters.toString());
-        localStorage.setItem('refreshToken', this.refreshToken);        
+        localStorage.setItem('refreshToken', this.refreshToken);  
+        this.router.navigateByUrl('https://application.zerostress.com.co/app/inicio');      
+                
       }
     });
   }

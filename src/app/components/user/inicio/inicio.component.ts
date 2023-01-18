@@ -31,9 +31,11 @@ export class InicioComponent implements OnInit {
           this.globals.loadedClaims.next(true);
           this.consultanteService.get(r.idConsultante).toPromise().then(res => {
             this.globals.consultante = res;
+
             // if (res.primerIngreso && !this.globals.formularioPrimerIngreso) {
             //   this.router.navigate(['/', 'app', 'reconocimiento']);
             // }
+
           });
         } else {
           this.authService.protected().toPromise().then((res) => {
@@ -42,9 +44,11 @@ export class InicioComponent implements OnInit {
               this.globals.loadedClaims.next(true);
               this.consultanteService.get(res.idConsultante).toPromise().then(resp => {
                 this.globals.consultante = resp;
+
                 // if (resp.primerIngreso && !this.globals.formularioPrimerIngreso) {
                 //   this.router.navigate(['/', 'app', 'reconocimiento']);
                 // }
+
               });
             }
           });

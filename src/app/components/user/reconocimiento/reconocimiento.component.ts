@@ -23,7 +23,23 @@ export class ReconocimientoComponent implements OnInit, AfterViewInit {
 
   constructor(private parametroService: ParametrosService, private router: Router, public globals: GlobalsUser,
               private consultaService: ConsultasService) {
-    const p = new Consultas();
+  }
+
+  ngOnInit(): void {
+    const param = new Parametros();
+    param.idTpParametro = TP_PARAMETROS.TP_ESTRES;
+    this.parametroService.list(param).toPromise().then(resp => {
+      this.tpEstres = resp;
+       if (this.globals.tpestres != null) {
+         setTimeout(() => {
+          console.log(this.globals.tpestres)
+          const buttonB = document.getElementById(String(this.globals.tpestres));
+          buttonB.click();
+        }, 500);
+      }
+    });
+
+    /*const p = new Consultas();
     p.idConsultante = this.globals.consultante.id;
     p.status = 'P';
     this.consultaService.list(p).toPromise().then(r => {
@@ -34,23 +50,9 @@ export class ReconocimientoComponent implements OnInit, AfterViewInit {
         }).then(() => {
           this.router.navigateByUrl('/app/misActividades');
         });
-      }
-    });
-  }
+      }      
+    });*/
 
-  ngOnInit(): void {
-    const param = new Parametros();
-    param.idTpParametro = TP_PARAMETROS.TP_ESTRES;
-    this.parametroService.list(param).toPromise().then(resp => {
-      this.tpEstres = resp;
-      if (this.globals.tpestres != null) {
-        setTimeout(() => {
-          console.log(this.globals.tpestres)
-          const buttonB = document.getElementById(String(this.globals.tpestres));
-          buttonB.click();
-        }, 500);
-      }
-    });
   }
 
   ngAfterViewInit(): void {

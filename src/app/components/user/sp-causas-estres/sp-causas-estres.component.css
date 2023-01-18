@@ -51,6 +51,13 @@ h2{
     width: 22%;
 }
 
+@media screen and (max-width: 600px){
+    .causa{
+    width: 37%;
+}
+}
+
+
 .content-op{
     width: 650px;
     border-radius: 25px;

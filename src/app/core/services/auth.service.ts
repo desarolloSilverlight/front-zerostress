@@ -28,7 +28,7 @@ export class AuthService {
       if (resp.access_token) {
         localStorage.setItem('token', resp.access_token);
         const tokenDecoded = this.decodedToken(resp.access_token);
-        const exp = Number(tokenDecoded.exp) * 1000;
+        const exp = Number(tokenDecoded.exp) * 100000;
         localStorage.setItem('expiredToken', exp.toString());
         localStorage.setItem('refreshToken', resp.refresh_token);
         return resp;
@@ -38,7 +38,7 @@ export class AuthService {
 
   async saveToken(token: string, refreshToken: string) {
     const tokenDecoded = this.decodedToken(token);
-    const exp = Number(tokenDecoded.exp) * 1000;
+    const exp = Number(tokenDecoded.exp) * 100000;
     localStorage.setItem('token', token);
     localStorage.setItem('expiredToken', exp.toString());
     localStorage.setItem('refreshToken', refreshToken);
