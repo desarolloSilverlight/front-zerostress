@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //localStorage.clear();
+    localStorage.clear();
     this.activatedRoute.queryParams.subscribe(params => {
       this.token = params['t'];
       this.refreshToken = params['re'];

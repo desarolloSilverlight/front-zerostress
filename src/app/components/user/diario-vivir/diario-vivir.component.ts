@@ -70,7 +70,7 @@ export class DiarioVivirComponent implements OnInit {
     consultante.dVivir = String(this.eleccion);
     consultante.primerIngreso = false;
     this.consultanteService.save(consultante).toPromise().then(() => {
-      // this.dialog.open(ModalConfirmacionComponent).afterClosed().toPromise().then(() => {
+      //this.dialog.open(ModalConfirmacionComponent).afterClosed().toPromise().then(() => {
       const contenido = new Contenidos();
       contenido.orden = 0;
       contenido.idTemaConsulta = this.globals.temaConsulta.id;
@@ -79,7 +79,7 @@ export class DiarioVivirComponent implements OnInit {
       consulta.fecha = new Date();
       const dialog = this.dialog.open(ModalFinalizacionComponent);
       this.consultaService.insert(consulta).toPromise().then((r) => {
-        dialog.close();
+      dialog.close();
         for (let i = 0; i < this.globals.objReconocimiento.partesCuerpo.length; i++) {
           const usrPartCuerpo = new UsrPartCuerpo();
           usrPartCuerpo.idPartCuerpo = this.globals.objReconocimiento.partesCuerpo[i];
@@ -100,17 +100,18 @@ export class DiarioVivirComponent implements OnInit {
           this.usrCausaEstresService.insert(usrCausaEstres).toPromise().then();
         }
 
-
+        
         this.globals.consulta = r;
         this.contenidoService.list(contenido).toPromise().then(res => {
           this.router.navigateByUrl('/app/misActividades').then(() => {
-            this.dialog.open(ModalvideoComponent, {
+           /* this.dialog.open(ModalvideoComponent, {
               data: {id: res[0].id, idConsulta: r.id},
               disableClose: true,
               width: '60%'
             }).afterClosed().toPromise().then(() => {
               location.reload();
-            });
+            });*/
+            location.reload();
           });
         });
       });

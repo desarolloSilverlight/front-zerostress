@@ -49,7 +49,7 @@ export class ModalCalificacionComponent implements OnInit {
   }
 
   cambioApariencia(id: string, posicion: number, calificacion: number): void {
-    console.log(this.partes);
+    console.log(this.partes);    
     const a = id.split(',');
     this.calificaciones[posicion].calificacion = calificacion;
     console.log('aaaa', a);

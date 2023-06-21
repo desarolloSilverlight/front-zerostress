@@ -24,6 +24,9 @@ export class SpCausasEstresComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    let inputField: HTMLElement = <HTMLElement>document.getElementById('#focus');
+    inputField && inputField.focus();
+
     this.sbCausasEstresService.listVi(new SbCausasEstres()).toPromise().then(resp => {
       this.causas = resp;
       resp.forEach(element => {
