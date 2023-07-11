@@ -23,10 +23,7 @@ export class SpCausasEstresComponent implements OnInit {
     console.log(this.globals);
   }
 
-  ngOnInit(): void {
-    let inputField: HTMLElement = <HTMLElement>document.getElementById('#focus');
-    inputField && inputField.focus();
-
+  ngOnInit(): void {    
     this.sbCausasEstresService.listVi(new SbCausasEstres()).toPromise().then(resp => {
       this.causas = resp;
       resp.forEach(element => {
@@ -52,6 +49,12 @@ export class SpCausasEstresComponent implements OnInit {
           })
         }
       }
+      const tituloElement = document.getElementById('titulo4');
+      if (tituloElement) {
+          console.log(tituloElement);
+          tituloElement.focus();
+        // window.location.reload();
+      } 
     });
 
     

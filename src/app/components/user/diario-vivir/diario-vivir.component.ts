@@ -39,6 +39,13 @@ export class DiarioVivirComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    const tituloElement = document.getElementById('titulo8');
+    if (tituloElement) {
+        console.log(tituloElement);
+        tituloElement.focus();
+       // window.location.reload();
+    }    
+
   }
 
   cambioApariencia(id: number) {
@@ -64,7 +71,6 @@ export class DiarioVivirComponent implements OnInit {
 
 
   next() {
-
     const consultante = this.globals.consultante;
     consultante.tpCerebro = this.globals.objReconocimiento.tpCerebero;
     consultante.dVivir = String(this.eleccion);
@@ -100,20 +106,21 @@ export class DiarioVivirComponent implements OnInit {
           this.usrCausaEstresService.insert(usrCausaEstres).toPromise().then();
         }
 
-        
         this.globals.consulta = r;
+        
         this.contenidoService.list(contenido).toPromise().then(res => {
           this.router.navigateByUrl('/app/misActividades').then(() => {
-           /* this.dialog.open(ModalvideoComponent, {
+           this.dialog.open(ModalvideoComponent, {
               data: {id: res[0].id, idConsulta: r.id},
               disableClose: true,
               width: '60%'
             }).afterClosed().toPromise().then(() => {
               location.reload();
-            });*/
+            });
             location.reload();
           });
         });
+
       });
       // })
     });

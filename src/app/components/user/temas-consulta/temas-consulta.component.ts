@@ -35,6 +35,14 @@ export class TemasConsultaComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+    const tituloElement = document.getElementById('titulo3');
+    if (tituloElement) {
+        console.log(tituloElement);
+        tituloElement.focus();
+       // window.location.reload();
+    }
+
+
     const temaConsulta = new TemasConsulta();
     temaConsulta.snHab = true;
     temaConsulta.idGrupo = this.id;

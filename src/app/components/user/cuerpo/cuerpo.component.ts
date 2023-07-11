@@ -67,6 +67,13 @@ export class CuerpoComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+    const tituloElement = document.getElementById('titulo5');
+    if (tituloElement) {
+        console.log(tituloElement);
+        tituloElement.focus();
+       // window.location.reload();
+    }
+
     if(this.globals.objReconocimiento.intensidad.length>0){
       for (let index = 0; index < this.globals.partePintada.length; index++) {
         this.mostrar(this.globals.partePintada[index],this.globals.objReconocimiento.partes[index]);

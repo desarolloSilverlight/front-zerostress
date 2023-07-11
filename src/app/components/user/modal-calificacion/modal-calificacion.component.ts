@@ -101,6 +101,7 @@ export class ModalCalificacionComponent implements OnInit {
         await this.consultaSevice.generarRuta(this.data.consulta).toPromise().then();
         this.dialogReff.close();
       } else {
+        
         // if (this.data.posicion !== undefined && this.data.contenidos !== undefined &&
         //   (this.data.posicion + 1) === this.data.contenidos.length) {
         //   (this.data.contenidos as Contenidos[]).forEach((r, ind) => {
@@ -111,7 +112,7 @@ export class ModalCalificacionComponent implements OnInit {
         //     if (r.id !== 10000) {
         //       this.contenidosAddConsultaService.insert(conteAdd).toPromise().then();
         //     }
-        //
+        
         //   });
         // }
 
@@ -130,6 +131,13 @@ export class ModalCalificacionComponent implements OnInit {
           this.dialogReff.close();
         }
       }
+      
+    }else{
+      Swal.fire({
+        title: 'ERROR',
+        icon: 'error',
+        text: 'Recuerde Seleccionar todas las partes de cuerpo que esta evaluando'
+      });
     }
   }
 

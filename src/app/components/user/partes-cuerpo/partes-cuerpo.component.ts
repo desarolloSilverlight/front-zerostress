@@ -26,11 +26,11 @@ export class PartesCuerpoComponent implements OnInit {
 
   constructor(private actRoute: ActivatedRoute, private router: Router,
               private parametroService: ParametrosService, public globals: GlobalsUser) {
-    console.log(globals);
+    console.log(globals);    
     // this.actRoute.params.subscribe(params => {
     this.id = this.globals.objReconocimiento.partes;
     for (let index = 0; index < this.id.length; index++) {
-      console.log(this.id[index]);
+      console.log(this.id[index]);    
       this.param.idTpParametro = this.id[index];
       console.log('algooo', this.param);
       this.parametroService.list(this.param).toPromise().then(resp => {
@@ -68,9 +68,13 @@ export class PartesCuerpoComponent implements OnInit {
     
     // });
   }
-
   ngOnInit(): void {
+    const tituloElement = document.getElementById('titulo6');
+    if (tituloElement) {
+        tituloElement.focus();
+    }
   }
+
 
   eleccion(descripcion: string, id: number): void {
     if (this.elecciones.length < 6) {

@@ -26,6 +26,13 @@ export class ReconocimientoComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+    const tituloElement = document.getElementById('titulo');
+    if (tituloElement) {
+        console.log(tituloElement);
+        tituloElement.focus();
+       // window.location.reload();
+    }  
+
     const param = new Parametros();
     param.idTpParametro = TP_PARAMETROS.TP_ESTRES;
     this.parametroService.list(param).toPromise().then(resp => {

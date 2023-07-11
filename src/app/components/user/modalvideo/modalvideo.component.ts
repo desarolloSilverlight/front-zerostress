@@ -55,7 +55,8 @@ export class ModalvideoComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    // if (this.imagen !== 'video' && this.id !== undefined) {
+    // if (this.imagen !== 'video' && this.id !== undefined) { //comentariada
+
     Swal.fire({
       allowOutsideClick: false,
       icon: 'info',
@@ -67,15 +68,19 @@ export class ModalvideoComponent implements OnInit, AfterViewInit {
       this.url = this.sanitizer.bypassSecurityTrustUrl(this.url);
       Swal.close();
       this.load = true;
-      // this.s3ClientService.download(this.contenido.link).toPromise().then(res => {
+
+      // this.s3ClientService.download(this.contenido.link).toPromise().then(res => { //comentariada
       //   this.base64 = res.base64;
       //   this.mimetype = res.mimetype;
       //   this.url = `data:${this.mimetype};base64,${this.base64}`;
       //   this.url = this.sanitizer.bypassSecurityTrustUrl(this.url);
-      // });
+      // });  //comentariada
+
     });
     console.log(this.audioElement);
-    // }
+
+    // } //comentariada
+
   }
 
   onClickNO(): void {
@@ -84,11 +89,11 @@ export class ModalvideoComponent implements OnInit, AfterViewInit {
 
   Calificar(): void {
 
-    // this.dialogReff.close();
+    // this.dialogReff.close(); // comentariada
     // const dialogRef = this.dialog.open(ModalEvaluarComponent, {});
     // dialogRef.afterClosed().subscribe(res => {
     //   console.log('calificación::::::', res);
-    // });
+    // }); // comentariada
 
     Swal.fire({
       allowOutsideClick: false,
@@ -97,7 +102,7 @@ export class ModalvideoComponent implements OnInit, AfterViewInit {
     });
     Swal.showLoading();
 
-    //(document.getElementById('audioElement') as HTMLAudioElement).pause();
+    //(document.getElementById('audioElement') as HTMLAudioElement).pause(); // comentariada
     if (this.flujo) {
 
       this.flujoConsulta = new FlujoConsulta();
@@ -182,7 +187,7 @@ export class ModalvideoComponent implements OnInit, AfterViewInit {
           this.flujoConsultaService.save(this.flujoConsulta).toPromise().then(res => {
             // next contenido
 
-            // const contenido = new Contenidos();
+            // const contenido = new Contenidos(); //cometariada
             // contenido.orden = this.contenido.orden + 1;
             // contenido.idTemaConsulta = this.globals.temaConsulta.id;
             // this.contenidoService.list(contenido).toPromise().then(resp => {
@@ -211,7 +216,7 @@ export class ModalvideoComponent implements OnInit, AfterViewInit {
             //       data: {id: resp[0].id}
             //     });
             //   }
-            // });
+            // }); //cometariada
 
 
             const cont = (this.data.contenidos as Contenidos[]) !== undefined ?

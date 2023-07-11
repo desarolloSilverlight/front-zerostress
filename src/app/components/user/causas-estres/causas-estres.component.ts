@@ -32,7 +32,15 @@ export class CausasEstresComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
+      const tituloElement = document.getElementById('titulo2');
+      if (tituloElement) {
+          console.log(tituloElement);
+          tituloElement.focus();
+         // window.location.reload();
+      }      
+     
+
     const grupo = new GruposDiagnostico();
     grupo.idtpEstres = this.id;
     this.gruposDiagnosticoService.list(grupo).toPromise().then(resp => {
@@ -42,7 +50,8 @@ export class CausasEstresComponent implements OnInit {
           const buttonB = document.getElementById(String(this.globals.causa));
           buttonB.click();
         }, 500);
-      }
+      }     
+
     });
   }
 

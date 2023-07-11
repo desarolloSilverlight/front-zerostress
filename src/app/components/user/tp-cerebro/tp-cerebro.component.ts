@@ -24,6 +24,13 @@ export class TpCerebroComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    const tituloElement = document.getElementById('titulo7');
+    if (tituloElement) {
+        console.log(tituloElement);
+        tituloElement.focus();
+       // window.location.reload();
+    } 
+
     const param = new Parametros();
     param.idTpParametro = TP_PARAMETROS.TP_CEREBRO;
     this.parametroService.list(param).toPromise().then(resp => {
