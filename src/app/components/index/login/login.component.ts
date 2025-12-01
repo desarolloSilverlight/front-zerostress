@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
         const expParameters = Number(tokenDecodedParameters.exp) * 100000;
         localStorage.setItem('expiredToken', expParameters.toString());
         localStorage.setItem('refreshToken', this.refreshToken);  
-        this.router.navigateByUrl('https://application.zerostress.com.co/app/inicio');      
+        this.router.navigateByUrl('https://zerostressapi.jrd-data.com.co/app/inicio');      
                 
       }
     });

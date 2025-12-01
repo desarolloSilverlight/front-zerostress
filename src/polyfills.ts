@@ -61,3 +61,10 @@ import 'zone.js/dist/zone'; // Included with Angular CLI.
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
+// Polyfills adicionales para compatibilidad con Safari/iOS
+import 'core-js/es/array';
+import 'core-js/es/object';
+import 'core-js/es/promise';
+import 'core-js/es/symbol';
+// Animaciones en Safari/IE y soporte Angular Material (requerido para algunos efectos)
+import 'web-animations-js';

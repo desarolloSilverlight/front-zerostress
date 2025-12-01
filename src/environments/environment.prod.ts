@@ -1,4 +1,4 @@
 export const environment = {
-  production: false,
-  apiEndpoint: 'https://zerostressmentoring.com/'
+  production: true,
+  apiEndpoint: 'https://zerostressapi.jrd-data.com.co/'
 };
